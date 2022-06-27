@@ -2,25 +2,21 @@
     <div class="row">
 
         <div class="col-lg-12 col-md-12 col-xs-12">
-            <div class="dropdown " style=" font-style: italic;  margin-top: 2px;">
+            <div class="dropdown " style=" font-style: italic; margin-top: 3px; font-size: large;">
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z" />
-                </svg> +(84) 24 7300 8855
+                SOCCERSTAR
 
-               
-                <button type="button" class="btn float-end dropdown-toggle" data-mdb-ripple-color="dark" data-bs-toggle="dropdown">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <p style="color: black; margin-bottom:0px;" class="nav-link float-end dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                     </svg>
-                    Tài khoản
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item " href="#">Đăng ký</a></li>
-                        <li><a class="dropdown-item " href="#">Đăng nhập</a></li>
-                        <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
-                    </ul>
+                    Tài khoản</p>
+                <ul class="dropdown-menu" aria-labelledby="dropdown07">
+                    <li><a class="dropdown-item" href="{{ route('user.register') }}">Đăng ký</a></li>
+                    <li><a class="dropdown-item" href="#">Đăng nhập </a> </li>
+                    <li><a class="dropdown-item" href="{{ route('user.logout')}}">Đăng xuất</a></li>
+                </ul>
 
             </div>
         </div>
