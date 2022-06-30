@@ -1,5 +1,4 @@
 
-
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-dark text-white">
     <!-- Section: Links  -->
@@ -9,20 +8,17 @@
             <div class="row mt-3">
                 <!--Grid column-->
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase fw-bold mb-4" style="color: #ff474c;">Về cửa hàng</h5>
+                    <h5 class="text-uppercase fw-bold mb-4" style="color: #ff474c;">GIỚI THIỆU</h5>
 
-                    <p>
+                    <p> Chào mừng bạn đến với ngôi nhà SoccerStar! <br>
                         Đây là trang chuyên bán về các loại giày đá banh và phụ kiện bóng đá. Phục vụ giao hàng toàn
-                        quốc, đáp ứng mọi nhu cầu của khách hàng!
+                        quốc, đáp ứng mọi nhu cầu của khách hàng và đang không ngừng phát triển lớn mạnh!
                     </p>
                 </div>
-                <!--Grid column-->
-
-                <!-- Grid column -->
                 <div class="col col-md-3 text-center col-lg-2 col-xl-3 mx-auto mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4" style="color: #ff474c;">
-                        Useful links
+                        MENU
                     </h6>
                     <p>
                         <a href="#!" class="text-reset">Trang chủ</a>
@@ -40,13 +36,10 @@
                         <a href="#!" class="text-reset">Tin tức</a>
                     </p>
                 </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4" style="color: #ff474c;">
-                        Contact Us
+                        LIÊN HỆ
                     </h6>
                     <p>
                         <i class="fas fa-home me-3"></i>
@@ -61,7 +54,6 @@
                     <p><i class="fas fa-print me-3"></i> 1800-1180</p>
                 </div>
                 <!-- Grid column -->
-
             </div>
             <!-- Grid row -->
         </div>
@@ -72,7 +64,7 @@
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <!-- Left -->
         <div class="me-5 d-flex d-lg-block">
-            <span style="color: #ff474c;">Get connected with us on social networks:</span>
+            <span style="color: #ff474c;">Kết nối với chúng tôi trên các mạng xã hội:</span>
         </div>
         <!-- Left -->
 
