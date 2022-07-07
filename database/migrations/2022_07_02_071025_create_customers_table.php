@@ -1,0 +1,62 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('customers', function (Blueprint $table) {
+            $table->increments('customer_id');
+            $table->string('customer_name', 100);
+            $table->integer('customer_telephone');
+            $table->string('customer_email', 100)->unique();
+            $table->string('customer_address', 255)->nullable();
+            $table->string('customer_image', 255)->nullable();
+            $table->string('customer_password', 60);
+            $table->boolean('customer_status')->default(1);
+        });
+
+        DB::table('customers')->insert(
+            [
+                'customer_name' => 'Lê Thị Ngọc Huyền',
+                'customer_telephone' => '0355485703',
+                'customer_email' => 'huyenle021039@gmail.com',
+                'customer_address' => '132 bến vân đồn , phường 6, quận 4, Hồ chí Minh',
+                'customer_password' => md5('123456')
+
+            ],
+
+        );
+
+        DB::table('customers')->insert(
+            [
+                'customer_name' => 'Lê Thị Bình',
+                'customer_telephone' => '0776383936',
+                'customer_email' => 'binhle@gmail.com',
+                'customer_address' => '132 bến vân đồn , phường 6, quận 4, Hồ chí Minh',
+                'customer_password' =>md5('binh12345')
+
+            ]
+        );
+    }
+
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('customers');
+    }
+};
