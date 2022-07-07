@@ -112,6 +112,10 @@ class UserController extends Controller
 
         if ($request->hasFile('customer_image')) {
             $file = $request->file('customer_image');
+            $extension = $file->getClientOriginalExtension();
+            if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
+                return redirect()->route('user.account')->with('thongbao', 'Bạn chỉ được chọn file có đuôi jpg,png,jpeg');
+            }
             $imageName = $file->getClientOriginalName();
             $file->move('images', $imageName);
         } else {

@@ -76,7 +76,7 @@
                                     <small>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
-                                                <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
+                                                <img alt="Avatar" class="table-avatar" src="{{ url('images/'.$p->customer_image) }}" style="border-radius: 50%;display: inline;width: 100%;">
                                             </li>
 
                                         </ul>
