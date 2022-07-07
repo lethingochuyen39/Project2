@@ -21,7 +21,7 @@
                                     @if(Session::has('thongbao'))
                                     <p style="color: green;">{{Session::get('thongbao')}}</p>
                                     @endif
-                                    <div class="col-md-6 col-lg-6">
+                                    <div class="col-md-8 col-lg-8">
                                         <div class="input-group input-group-sm mb-3 col-sm-3">
                                             <span class="input-group-text">Mã khách hàng</i></span>
                                             <input type="text" name="customer_id" value="{{ $p->customer_id }}" class="form-control" readonly>
@@ -31,7 +31,7 @@
                                     <small>@if($errors->has('customer_name'))
                                         <strong class="text-danger">{{ $errors->first('customer_name') }}</strong>
                                         @endif</small>
-                                    <div class="col-md-6 col-lg-6">
+                                    <div class="col-md-8 col-lg-8">
                                         <div class="input-group input-group-sm mb-3 col-md-6 col-lg-6">
                                             <span class="input-group-text">Họ tên</i></span>
                                             <input type="text" name="customer_name" value="{{$p->customer_name}}" class="form-control" />
@@ -40,7 +40,7 @@
 
 
 
-                                    <div class="col-md-6 col-lg-6">
+                                    <div class="col-md-8 col-lg-8">
                                         <small>@if($errors->has('customer_telephone'))
                                             <strong class="text-danger">{{ $errors->first('customer_telephone') }}</strong>
                                             @endif</small>
@@ -51,7 +51,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-6">
+                                    <div class="col-md-8 col-lg-8">
                                         <small>@if($errors->has('customer_password'))
                                             <strong class="text-danger">{{ $errors->first('customer_password') }}</strong>
                                             @endif</small>

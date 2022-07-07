@@ -19,28 +19,27 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="txt-id">Mã Bình luận</label>
-                                <input type="text" class="form- control" id="txt-id" name="comment_id" value="{{ $p->comment_id }}" readonly>
+                                <input type="text" class="form" id="txt-id" name="comment_id" value="{{ $p->comment_id }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-name">Tài khoản bình luận</label>
-                                <input type="text" class="form- control" id="txt-name" name="comment_username" value="{{ $p->comment_username }}" readonly>
+                                <input type="text" class="form" id="txt-name" name="comment_username" value="{{ $p->comment_username }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Sản phẩm bình luận</label>
-                                <input type="text" class="form- control" id="txt-price" name="product_id" value="{{ $p->product_id }}" readonly>
+                                <input type="text" class="form" id="txt-price" name="product_id" value="{{ $p->product_id }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Điểm đánh giá</label>
-                                <input type="text" class="form- control" id="txt-price" name="comment_point" value="{{ $p->comment_point }}" readonly>
+                                <input type="text" class="form" id="txt-price" name="comment_point" value="{{ $p->comment_point }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Ngày bình luận</label>
-                                <input type="text" class="form- control" id="txt-price" name="comment_date" value="{{ $p->comment_date }}" readonly>
+                                <input type="text" class="form" id="txt-price" name="comment_date" value="{{ $p->comment_date }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="txt-price">Nội dung bình luận</label>
-                                <input type="text" class="form- control" id="txt-price" name="comment_content" value="{{ $p->comment_content }}" readonly>
-                            </div>
+                                <label for="txt-price">Nội dung bình luận</label> <br>
+                                <textarea  name="comment_reply" id="" cols="50" rows="1" readonly>{{ $p->comment_content }}</textarea>   
                             <div class="form-group">
                                 <label for="txt-price">Nội dung trả lời</label> <br>
                                 <textarea  name="comment_reply" id="" cols="50" rows="5">{{ $p->comment_reply }}</textarea>   

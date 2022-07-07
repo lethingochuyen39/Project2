@@ -6,7 +6,6 @@ use App\Models\Comment;
 use App\Models\Customer;
 use App\Models\Feedback;
 use App\Http\Requests\AdminLoginRequest;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -48,11 +47,10 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-
         return view('admin.dashboard-admin');
     }
 
-    public function logout(Request $request)
+    public function logout()
     {
         Auth::logout();
         return redirect()->route('admin.login');
@@ -95,6 +93,7 @@ class AdminController extends Controller
         $p->delete();
         return redirect()->route('admin.customer');
     }
+
     // binh luan
     public function comment()
     {
@@ -144,4 +143,5 @@ class AdminController extends Controller
         $p->delete();
         return redirect()->route('admin.feedback');
     }
+    
 }

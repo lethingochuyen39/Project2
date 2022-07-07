@@ -17,10 +17,9 @@
                 </ol>
             </div>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
 </section>
 
-<!-- Main content -->
 <!-- Main content -->
 <section class="content">
     <div class="row">
@@ -94,13 +93,12 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- /.card-body -->
+
             </div>
-            <!-- /.card -->
+
         </div>
-        <!-- /.col -->
+
     </div>
-    <!-- /.row -->
 </section>
 @endsection
 @section('script-section')

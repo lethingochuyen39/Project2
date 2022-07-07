@@ -18,7 +18,6 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
                 <a class="h1"><b>Đăng Nhập</b> Admin</a>
@@ -64,11 +63,9 @@
                                         </label>
                                     </div>
                                 </div>
-                                <!-- /.col -->
                                 <div class="col-5">
                                     <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
                                 </div>
-                                <!-- /.col -->
                             </div>
                         </form>
 
@@ -78,7 +75,6 @@
             </div>
         </div>
     </div>
-    <!-- /.login-box -->
 
     <!-- jQuery -->
     <script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>

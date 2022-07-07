@@ -15,14 +15,12 @@ class UserController extends Controller
 {
     public function home()
     {
-       
             return view('user.pages.home');
       
     }
 
     public function register()
     {
-
         return view('user.register-user');
     }
 

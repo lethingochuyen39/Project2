@@ -26,8 +26,8 @@ class RegisterRequest extends FormRequest
         return [
           
             'customer_name' => 'Required|string|min:3|max:100',
-            // 'customer_telephone' => 'numeric|min:9|max:12',
-            'customer_email' => 'Required|email',
+            'customer_telephone' => 'Required|numeric|digits_between:9,12',
+            'customer_email' => 'Required|email|unique',
             'customer_password' => 'Required|min:6|max:60',
             'customer_confirm_password' => 'Required|same:customer_password'
 
@@ -42,12 +42,13 @@ class RegisterRequest extends FormRequest
             'customer_name.max'=>'Họ tên dài nhất là 100 ký tự!',
 
             'customer_email.required'=>'Bạn chưa nhập e-mail!',
-            'customer_email.unique'=>'Email phải là duy nhất!',
+            'customer_email.unique'=>'Email đã tồn tại!',
             'customer_email.email'=>'Email không đúng định dạng!',
 
-            // 'customer_telephone.numeric'=>'Số điện thoại phải là số',
-            // 'customer_telephone.min'=>'Số điện thoại ít nhất là 9 số!',
-            // 'customer_telephone.max'=>'Họ tên dài nhất là 12 số!',
+            'customer_telephone.required'=>'Bạn chưa nhập số điện thoại!',
+            'customer_telephone.numeric'=>'Số điện thoại phải là số!',
+             'customer_telephone.digits_between'=>'Số điện thoại chỉ từ 9-12 số !',
+             'customer_telephone.max'=>'Số điện thoại dài nhất là 12 số!',
 
             'customer_password.required'=>'Bạn chưa nhập Mật khẩu!',
             'customer_password.min'=>'Mật khẩu có ít nhất 6 ký tự chữ số!',

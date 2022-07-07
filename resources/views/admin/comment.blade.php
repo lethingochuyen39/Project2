@@ -17,7 +17,7 @@
                 </ol>
             </div>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
 </section>
 
 <!-- Main content -->
@@ -28,7 +28,6 @@
                 <div class="card-header">
                     <h3 class="card-title">Bảng Bình luận với các thông tin về bình luận </h3>
                 </div>
-                <!-- /.card-header -->
                 <div class="card-body">
                     <table id="product" class="table table-bordered table-hover">
                         <thead>
@@ -106,13 +105,9 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- /.card-body -->
             </div>
-            <!-- /.card -->
         </div>
-        <!-- /.col -->
     </div>
-    <!-- /.row -->
 </section>
 @endsection
 @section('script-section')
