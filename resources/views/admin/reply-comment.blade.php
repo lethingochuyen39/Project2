@@ -39,21 +39,42 @@
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Nội dung bình luận</label> <br>
-                                <textarea  name="comment_reply" id="" cols="50" rows="1" readonly>{{ $p->comment_content }}</textarea>   
-                            <div class="form-group">
-                                <label for="txt-price">Nội dung trả lời</label> <br>
-                                <textarea  name="comment_reply" id="" cols="50" rows="5">{{ $p->comment_reply }}</textarea>   
+                                <textarea name="comment_reply" id="" cols="50" rows="1" readonly>{{ $p->comment_content }}</textarea>
+                                <div class="form-group">
+                                    <label for="txt-price">Nội dung trả lời</label> <br>
+                                    <textarea name="comment_reply" id="" cols="50" rows="5">{{ $p->comment_reply }}</textarea>
+                                </div>
+                                <section class="content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="card card-outline card-info">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">
+                                                        Summernote
+                                                    </h3>
+                                                </div>
+                                                <!-- /.card-header -->
+                                                <div class="card-body">
+                                                    <textarea id="summernote">Place <em>some</em> <u>text</u> <strong>here</strong></textarea>
+                                                </div>
+                                                <div class="card-footer">
+                                                    Visit <a href="https://github.com/summernote/summernote/">Summernote</a> documentation for more examples and information about the plugin.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.col-->
+                                    </div>
+                                </section>
+
                             </div>
 
-                        </div>
+                            <!-- /.card-body -->
+                            <div class="col-3 mx-auto " style="margin-bottom: 30px;">
+                                <button type="submit" class="btn btn-primary btn-block">Trả lời</button>
+                                <button type="reset" class="btn btn-danger btn-block ">Hủy</button>
+                            </div>
 
-                        <!-- /.card-body -->
-                        <div class="col-3 mx-auto " style="margin-bottom: 30px;">
-                            <button type="submit" class="btn btn-primary btn-block">Trả lời</button>
-                            <button type="reset" class="btn btn-danger btn-block ">Hủy</button>
-                        </div>
-                        
-                        
+
                     </form>
                 </div>
                 <!-- /.card -->

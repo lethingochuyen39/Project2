@@ -31,7 +31,7 @@
                             @endif</small>
                         <div class="input-group input-group-sm mb-3 col-sm-3">
                             <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
-                            <input type="text" name="customer_name" class="form-control" placeholder="Họ tên">
+                            <input type="text" name="customer_name" class="form-control" placeholder="Họ tên*">
                         </div>
 
                         <small> @if($errors->has('customer_telephone'))
@@ -39,7 +39,7 @@
                             @endif</small>
                         <div class="input-group input-group-sm mb-3 col-sm-3">
                             <span class="input-group-text bg-primary"><i class="bi bi-telephone-plus-fill text-white"></i></span>
-                            <input type="number" name="customer_telephone" class="form-control" placeholder="Số điện thoại">
+                            <input type="number" name="customer_telephone" class="form-control" placeholder="Số điện thoại*">
                         </div>
 
                         <small>@if($errors->has('customer_email'))
@@ -47,21 +47,21 @@
                             @endif</small>
                         <div class="input-group input-group-sm mb-3 col-sm-3">
                             <span class="input-group-text bg-primary"><i class="bi bi-envelope text-white"></i></span>
-                            <input type="email" name="customer_email" class="form-control" placeholder="Email">
+                            <input type="email" name="customer_email" class="form-control" placeholder="Email*">
                         </div>
                         <small> @if($errors->has('customer_password'))
                             <strong class="text-danger">{{ $errors->first('customer_password') }}</strong>
                             @endif</small>
                         <div class="input-group input-group-sm mb-3 col-sm-3">
                             <span class="input-group-text bg-primary"><i class="bi bi-key-fill text-white"></i></span>
-                            <input type="password" name="customer_password" class="form-control" placeholder="Mật khẩu">
+                            <input type="password" name="customer_password" class="form-control" placeholder="Mật khẩu*">
                         </div>
                         <small> @if($errors->has('customer_confirm_password'))
                             <strong class="text-danger">{{ $errors->first('customer_confirm_password') }}</strong>
                             @endif</small>
                         <div class="input-group input-group-sm mb-3 col-sm-3">
                             <span class="input-group-text bg-primary"><i class="bi bi-key-fill text-white"></i></span>
-                            <input type="password" name="customer_confirm_password" class="form-control" placeholder="Lặp lại mật khẩu của bạn">
+                            <input type="password" name="customer_confirm_password" class="form-control" placeholder="Lặp lại mật khẩu của bạn*">
 
                         </div>
                         <div class="input-group input-group-sm mb-3 col-sm-3">

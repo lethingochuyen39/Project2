@@ -9,7 +9,7 @@
                 <div class="card card-primary">
                     <div class="card-header">
 
-                        <h3 class="card-title">Cập nhật: {{ $p->customer_name }}</h3>
+                        <h3 class="card-title">Cập nhật trạng thái: {{ $p->customer_name }}</h3>
                     </div>
                     <!-- form start -->
                     <form role="form" action="{{ route('admin.postEditCustomer', $p->customer_id) }}" method="post" >
@@ -17,23 +17,23 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="txt-id">Mã khách hàng</label>
-                                <input type="text" class="form" id="txt-id" name="customer_id" value="{{ $p->customer_id }}" readonly>
+                                <input type="text" class="form" id="customer_id" name="customer_id" value="{{ $p->customer_id }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-name">Họ tên</label>
-                                <input type="text" class="form" id="txt-name" name="customer_name" value="{{ $p->customer_name }}" readonly>
+                                <input type="text" class="form" id="customer_name" name="customer_name" value="{{ $p->customer_name }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Số điện thoại</label>
-                                <input type="text" class="form" id="txt-price" name="customer_telephone" value="{{ $p->customer_telephone }}" readonly>
+                                <input type="text" class="form" id="customer_telephone" name="customer_telephone" value="{{ $p->customer_telephone }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">E-mail</label>
-                                <input type="text" class="form" id="txt-price" name="customer_email" value="{{ $p->customer_email }}" readonly>
+                                <input type="text" class="form" id="customer_email" name="customer_email" value="{{ $p->customer_email }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="txt-price">Địa chỉ</label>
-                                <input type="text" class="form" id="txt-price" name="customer_address" value="{{ $p->customer_address }}" readonly>
+                                <label for="txt-price">Địa chỉ</label><br>
+                                <textarea name="customer_address" id="customer_address" cols="50" rows="1" class="form">{{ $p->customer_address }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Trạng thái </label>
@@ -56,13 +56,11 @@
                             </div>
                         </div>
 
-                        <!-- /.card-body -->
                         <div class="col-3 mx-auto" style="margin-bottom: 30px;">
                             <button type="submit" class="btn btn-primary btn-block">Cập nhật</button>
                         </div>
                     </form>
                 </div>
-                <!-- /.card -->
             </div>
         </div>
     </div>

@@ -36,7 +36,7 @@
                                 <strong class="text-danger">{{ $errors->first('email') }}</strong>
                                 @endif</small>
                             <div class="input-group mb-3">
-                                <input type="email" class="form-control" name="email" placeholder="E-mail">
+                                <input type="email" class="form-control" name="email" placeholder="E-mail*">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-envelope"></span>
@@ -47,7 +47,7 @@
                                 <strong class="text-danger">{{ $errors->first('password') }}</strong>
                                 @endif</small>
                             <div class="input-group mb-3">
-                                <input type="password" name="password" class="form-control" placeholder="Mật khẩu">
+                                <input type="password" name="password" class="form-control" placeholder="Mật khẩu*">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-lock"></span>

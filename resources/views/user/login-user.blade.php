@@ -36,18 +36,15 @@
                                         @endif</small>
                                     <div class="input-group input-group-sm mb-3 col-sm-3">
                                         <span class="input-group-text bg-primary"><i class="bi bi-envelope text-white"></i></span>
-                                        <input type="email" name="customer_email" class="form-control" placeholder="Email">
+                                        <input type="email" name="customer_email" class="form-control" placeholder="Email*">
                                     </div>
                                     <small> @if($errors->has('customer_password'))
                                         <strong class="text-danger">{{ $errors->first('customer_password') }}</strong>
                                         @endif</small>
                                     <div class="input-group input-group-sm mb-3 col-sm-3">
                                         <span class="input-group-text bg-primary"><i class="bi bi-key-fill text-white"></i></span>
-                                        <input type="password" name="customer_password" class="form-control" placeholder="Mật khẩu">
+                                        <input type="password" name="customer_password" class="form-control" placeholder="Mật khẩu*">
                                     </div>
-
-
-
                                     <div class="d-grid col-5 mx-auto">
                                         <button class="btn btn-primary" type="submit"><span></span>Đăng nhập</button>
                                     </div>
