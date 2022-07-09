@@ -4,13 +4,13 @@
 
 
 <style>
-    * {
+    /* * {
         margin: 0;
         padding: 0;
         font-size: 17px;
         line-height: 2rem;
         font-family: 'Montserrat', sans-serif;
-    }
+    } */
     .info-1 {
         background-image: url("{{ asset('frontend/img/banner_giay.jpg') }}");
         background-size: cover;

@@ -1,21 +1,22 @@
-<div style="background-color: #F5F5F5;">
+<div style="background-color: #181818 ;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xs-12">
-                <div class="dropdown " style=" font-style: italic; margin-top: 3px; font-size: large;">
-                    SOCCERSTAR
+                <div class="dropdown " style=" font-style: italic; color: #F0F0F0;">
+                    <!-- SOCCERSTAR --> SoccerStar - Luôn cam kết hàng chính hãng
                     @if(Session::has('customer_name'))
-                    <p style="color: black; margin-bottom:0px;" class="nav-link float-end dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <p style="color: #F0F0F0; margin-bottom:0px;" class="nav-link float-end dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                         </svg>
                         <small>{{Session::get('customer_name')}}</small>
-                    </p>
-                    <ul class="dropdown-menu" aria-labelledby="dropdown07">
+                        <ul class="dropdown-menu" aria-labelledby="dropdown07">
                         <li><a class="dropdown-item" href="{{ route('user.account') }}">Thông tin tài khoản</a> </li>
                         <li><a class="dropdown-item" href="{{ route('user.logout')}}">Đăng xuất</a></li>
                     </ul>
+                    </p>
+                   
                     @else
                     <p style="color: black; margin-bottom:0px;" class="nav-link float-end dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
