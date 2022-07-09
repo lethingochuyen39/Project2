@@ -40,22 +40,22 @@
                                 <?php
                                 if ($p->customer_status == 0) {
                                     echo '<div class="form-check">
-    <input type="radio" name="customer_status" value="0" checked>
-    <label class="form-check-label">Ẩn</label>
-</div>
-<div class="form-check">
-    <input type="radio" name="customer_status" value="1" >
-    <label class="form-check-label">Hiển thị</label>
-</div>';
+                                    <input type="radio" name="customer_status" value="0" checked>
+                                    <label class="form-check-label">Ẩn</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="customer_status" value="1" >
+                                    <label class="form-check-label">Hiển thị</label>
+                                </div>';
                                 } else {
-                                    echo ' <div class="form-check">
-<input type="radio" name="customer_status" value="0" >
-<label class="form-check-label">Ẩn</label>
-</div>
-<div class="form-check">
-<input type="radio" name="customer_status" value="1" checked>
-<label class="form-check-label">Hiển thị</label>
-</div>';
+                                                                    echo ' <div class="form-check">
+                                <input type="radio" name="customer_status" value="0" >
+                                <label class="form-check-label">Ẩn</label>
+                                </div>
+                                <div class="form-check">
+                                <input type="radio" name="customer_status" value="1" checked>
+                                <label class="form-check-label">Hiển thị</label>
+                                </div>';
                                 }
                                 ?>
 
