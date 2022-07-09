@@ -28,7 +28,7 @@
                                 <strong class="text-danger">{{ $errors->first('name') }}</strong>
                                 @endif</small>
                             <div class="form-group">
-                                <label for="txt-name">Tên đăng nhập</label>
+                                <label for="txt-name">Họ tên</label>
                                 <input type="text" class="form-control" id="txt-name" name="name">
                             </div>
 
@@ -69,7 +69,7 @@
 </section>
 @endsection
 @section('script-section')
-<script src="{{ asset('plugins/bs-custom-file-input/bs-custom- file-input.min.js') }}"></script>
+<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

@@ -12,7 +12,7 @@
                         <h3 class="card-title">Cập nhật trạng thái: {{ $p->customer_name }}</h3>
                     </div>
                     <!-- form start -->
-                    <form role="form" action="{{ route('admin.postEditCustomer', $p->customer_id) }}" method="post" >
+                    <form role="form" action="{{ route('admin.postEditCustomer', $p->customer_id) }}" method="post">
                         {{ csrf_field() }}
                         <div class="card-body">
                             <div class="form-group">
@@ -37,22 +37,35 @@
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Trạng thái </label>
+                                <?php
+                                if ($p->customer_status == 0) {
+                                    echo '<div class="form-check">
+    <input type="radio" name="customer_status" value="0" checked>
+    <label class="form-check-label">Ẩn</label>
+</div>
+<div class="form-check">
+    <input type="radio" name="customer_status" value="1" >
+    <label class="form-check-label">Hiển thị</label>
+</div>';
+                                } else {
+                                    echo ' <div class="form-check">
+<input type="radio" name="customer_status" value="0" >
+<label class="form-check-label">Ẩn</label>
+</div>
+<div class="form-check">
+<input type="radio" name="customer_status" value="1" checked>
+<label class="form-check-label">Hiển thị</label>
+</div>';
+                                }
+                                ?>
 
-                                <div class="form-check">
-                                    <input type="radio" name="customer_status" value="0">
-                                    <label class="form-check-label">Ẩn</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="radio" name="customer_status" value="1" checked>
-                                    <label class="form-check-label">Hiển thị</label>
-                                </div>
                             </div>
 
                             <div class="form-group">
 
                                 <label for="image">Ảnh đại diện</label><br>
                                 <img class="img-fluid" src="{{ url('images/'.$p->customer_image) }}" width="100" height="100" />
-                                
+
                             </div>
                         </div>
 

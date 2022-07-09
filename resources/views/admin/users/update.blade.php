@@ -28,8 +28,8 @@
                                 <strong class="text-danger">{{ $errors->first('name') }}</strong>
                                 @endif</small>
                             <div class="form-group">
-                                <label for="txt-name">Tên đăng nhập</label>
-                                <input type="text" class="form-control" id="txt-name" name="name" value="{{ $p->name }}">
+                                <label for="txt-name">Họ tên</label>
+                                <input type="text" class="form-control" id="txt-name" name="name" value="{{ $p->name }}" >
                             </div>
 
                             <div class="form-group">
@@ -37,7 +37,7 @@
                                     <strong class="text-danger">{{ $errors->first('email') }}</strong>
                                     @endif</small>
                                 <label for="txt-name">Email</label>
-                                <input type="email" class="form-control" id="txt-email" name="email" value="{{ $p->email }}">
+                                <input type="email" class="form-control" id="txt-email" name="email" value="{{ $p->email }}" >
                             </div>
                             <div class="form-group">
                                 <small>@if($errors->has('password'))
@@ -47,19 +47,30 @@
                                 <input type="password" class="form-control" id="txt-password" name="password" value="{{ $p->password }}">
                             </div>
                             <div class="form-group">
-                            <small>@if($errors->has('password'))
+                                <small>@if($errors->has('password'))
                                     <strong class="text-danger">{{ $errors->first('role') }}</strong>
                                     @endif</small>
-                                <label for="txt-name">Chức vụ</label></br>
-                                <input type="radio" id="QLSP" name="role" value="1">
-                                <label for="QLSP">Quản lý sản phẩm</label><br>
-                                <input type="radio" id="QLKH" name="role" value="2">
-                                <label for="QLKH">Quản lý khách hàng</label><br>
+                                <?php
+                                if ($p->role) {
+                                    if ($p->role == 0) {
+                                        echo '<label for="txt-name">Chức vụ</label></br>
+                                         <input type="radio" id="QL" name="role" value="0" readonly checked>
+                                         <label for="QLSP">Quản lý</label><br>';
+                                    }else{
+                                        echo ' <label for="txt-name">Chức vụ</label></br>
+                                        <input type="radio" id="QLSP" name="role" value="1">
+                                        <label for="QLSP">Quản lý sản phẩm</label><br>
+                                        <input type="radio" id="QLKH" name="role" value="2">
+                                        <label for="QLKH">Quản lý khách hàng</label><br>';
+                                    }
+                                }
+
+                                ?>
                             </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
                     </form>
                 </div>
                 <!-- /.card -->
