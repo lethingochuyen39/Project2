@@ -1,3 +1,33 @@
+<button id="scrolltotop" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Go to the top">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<script>
+    let mybutton = document.getElementById("scrolltotop");
+
+    // Khi người dùng cuộn xuống 20px từ đầu tài liệu sẽ hiển thị nút
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    // Khi người dùng nhấp vào nút, cuộn lên đầu tài liệu
+    mybutton.addEventListener("click", backToTop);
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-dark text-white">

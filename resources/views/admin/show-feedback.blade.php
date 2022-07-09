@@ -16,15 +16,15 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="txt-id">Mã phản hồi</label>
-                                <input type="text" class="form" id="txt-id" name="feedback_id" value="{{ $p->feedback_id }}" readonly>
+                                <input type="text" class="form-control" id="txt-id" name="feedback_id" value="{{ $p->feedback_id }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-name">Họ tên</label>
-                                <input type="text" class="form" id="txt-name" name="feedback_name" value="{{ $p->feedback_name }}" readonly>
+                                <input type="text" class="form-control" id="txt-name" name="feedback_name" value="{{ $p->feedback_name }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">E-mail</label>
-                                <input type="text" class="form" id="txt-price" name="feedback_email" value="{{ $p->feedback_email }}" readonly>
+                                <input type="text" class="form-control" id="txt-price" name="feedback_email" value="{{ $p->feedback_email }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Nội dung phản hồi</label> <br>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Ngày phản hồi</label>
-                                <input type="text" class="form" id="txt-price" name="feedback_date" value="{{ $p->feedback_date }}" readonly>
+                                <input type="text" class="form-control" id="txt-price" name="feedback_date" value="{{ $p->feedback_date }}" readonly>
                             </div>
 
                         </div>

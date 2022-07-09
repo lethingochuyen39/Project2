@@ -10,7 +10,7 @@
                 <h1>Danh sách khách hàng</h1>
             </div>
             <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+                <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">trang chủ</a></li>
                     <li class="breadcrumb-item active">Khách hàng</li>
                 </ol>
@@ -29,101 +29,64 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="product" class="table table-bordered table-hover">
+                    <table id="" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th style="width: 1%" class="text-center">
-                                    ID
-                                </th>
-                                <th style="width: 10%" class="text-center">
-                                    Họ Tên KH
-                                </th>
-                                <th style="width: 10%" class="text-center">
-                                    Ảnh KH
-                                </th>
-                                <th style="width: 10%" class="text-center">
-                                    Số ĐT
-                                </th>
-                                <th style="width: 15%" class="text-center">
-                                    Email
-                                </th>
-                                <th style="width: 20%" class="text-center">
-                                    Địa Chỉ
-                                </th>
-                                <th style="width: 10%" class="text-center">
-                                    Trạng Thái
-                                </th>
-                                <th style="width: 30%" class="text-center">
-                                    Tùy chọn
-                                </th>
+                                <th style="width: 1%" class="text-center">ID</th>
+                                <th style="width: 10%" class="text-center">Họ Tên KH</th>
+                                <th style="width: 10%" class="text-center">Ảnh KH</th>
+                                <th style="width: 10%" class="text-center">Số ĐT</th>
+                                <th style="width: 15%" class="text-center">Email</th>
+                                <th style="width: 20%" class="text-center">Địa Chỉ</th>
+                                <th style="width: 10%" class="text-center">Trạng Thái</th>
+                                <th style="width: 30%" class="text-center">Tùy chọn</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($customers as $p)
                             <tr>
-                                <td>
-                                    {{ $p->customer_id }}
-                                </td>
+                                <td>{{ $p->customer_id }}</td>
 
+                                <td>{{ $p->customer_name }}</td>
                                 <td>
-                                    {{ $p->customer_name }}
-                                </td>
-                                <td>
-                                    <a>
-
-                                    </a>
-                                    <br />
                                     <small>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <img alt="Avatar" class="table-avatar" src="{{ url('images/'.$p->customer_image) }}" style="border-radius: 50%;display: inline;width: 100%;">
                                             </li>
-
                                         </ul>
                                     </small>
                                 </td>
-                                <td>
-                                    {{ $p->customer_telephone }}
-                                </td>
-                                <td>
-                                    {{ $p->customer_email }}
-                                </td>
+                                <td> {{ $p->customer_telephone }}</td>
+                                <td>{{ $p->customer_email }}</td>
 
-                                <td>
-                                    {{ $p->customer_address }}
-                                </td>
+                                <td>{{ $p->customer_address }}</td>
 
                                 <td class="project-state text-center">
-                                <?php
-                                if ($p->customer_status == 0) {
-                                    echo '<span class="badge badge-success">Ẩn</span>';
-                                } else {
-                                    echo '<span class="badge badge-success"> Hiển thị </span>';
-                                }
-                                ?> 
+                                    <?php
+                                    if ($p->customer_status == 0) {
+                                        echo '<span class="badge badge-success">Ẩn</span>';
+                                    } else {
+                                        echo '<span class="badge badge-success"> Hiển thị </span>';
+                                    }
+                                    ?>
                                 </td>
                                 <td class="project-actions text-right">
                                     <a class="btn btn-primary btn-sm" href="{{ route('admin.showCustomer',$p->customer_id) }}">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Xem
+                                        <i class="fas fa-folder"></i>Xem
                                     </a>
                                     <a class="btn btn-info btn-sm" href="{{ route('admin.editCustomer',$p->customer_id) }}">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Sửa
+                                        <i class="fas fa-folder"></i>Sửa
                                     </a>
                                     <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ route('admin.deleteCustomer',$p->customer_id) }}">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Xóa
+                                        <i class="fas fa-trash"></i>Xóa
                                     </a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    </div>
+                </div>
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->

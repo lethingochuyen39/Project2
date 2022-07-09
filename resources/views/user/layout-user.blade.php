@@ -9,14 +9,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+        
 <style>
 
     .error{
         color: red;
     }
+    #scrolltotop {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: #e62739;
+        box-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+        color: whitesmoke;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: none;
+    }
+
+    #scrolltotop:active {
+        background: #cc2333;
+    }
+
 </style>
 </head>
 

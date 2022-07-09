@@ -17,23 +17,23 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="txt-id">Mã khách hàng</label>
-                                <input type="text" class="form" id="customer_id" name="customer_id" value="{{ $p->customer_id }}" readonly>
+                                <input type="text" class="form-control" id="customer_id" name="customer_id" value="{{ $p->customer_id }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-name">Họ tên</label>
-                                <input type="text" class="form" id="customer_name" name="customer_name" value="{{ $p->customer_name }}" readonly>
+                                <input type="text" class="form-control" id="customer_name" name="customer_name" value="{{ $p->customer_name }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Số điện thoại</label>
-                                <input type="text" class="form" id="customer_telephone" name="customer_telephone" value="{{ $p->customer_telephone }}" readonly>
+                                <input type="text" class="form-control" id="customer_telephone" name="customer_telephone" value="{{ $p->customer_telephone }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">E-mail</label>
-                                <input type="text" class="form" id="customer_email" name="customer_email" value="{{ $p->customer_email }}" readonly>
+                                <input type="text" class="form-control" id="customer_email" name="customer_email" value="{{ $p->customer_email }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Địa chỉ</label><br>
-                                <textarea name="customer_address" id="customer_address" cols="50" rows="1" class="form">{{ $p->customer_address }}</textarea>
+                                <textarea name="customer_address" id="customer_address" cols="50" rows="1" class="form-control">{{ $p->customer_address }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Trạng thái </label>

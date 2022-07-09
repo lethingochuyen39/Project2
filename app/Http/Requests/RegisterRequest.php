@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
           
             'customer_name' => 'Required|string|min:3|max:100',
             'customer_telephone' => 'Required|numeric|digits_between:9,12',
-            'customer_email' => 'Required|email|unique',
+            'customer_email' => 'Required|email',
             'customer_password' => 'Required|min:6|max:60',
             'customer_confirm_password' => 'Required|same:customer_password'
 
@@ -42,7 +42,6 @@ class RegisterRequest extends FormRequest
             'customer_name.max'=>'Họ tên dài nhất là 100 ký tự!',
 
             'customer_email.required'=>'Bạn chưa nhập e-mail!',
-            'customer_email.unique'=>'Email đã tồn tại!',
             'customer_email.email'=>'Email không đúng định dạng!',
 
             'customer_telephone.required'=>'Bạn chưa nhập số điện thoại!',

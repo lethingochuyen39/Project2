@@ -54,7 +54,7 @@
                                             @endif</small>
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text">Mật khẩu</i></span>
-                                            <input type="text" name="customer_password" value="{{$p->customer_password}}" class="form-control" />
+                                            <input type="password" name="customer_password" value="{{$p->customer_password}}" class="form-control" />
 
                                         </div>
                                     </div>

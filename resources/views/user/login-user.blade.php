@@ -14,7 +14,7 @@
                                 <form action="{{ Route('user.postlogin') }}" method="post">
 
                                     <div class="d-flex align-items-center mb-3 pb-1">
-                                        <img src="{{ asset('frontend/img/logo.jpg') }}" style="width: 70px; height: 70px;" alt="SoccerStar">
+                                        <img src="{{ asset('frontend/img/logo9.jpg') }}" style="width: 70px; height: 70px;" alt="SoccerStar">
 
                                         <span class="h3 fw-bold mb-0" style="color: #ff6219;">ĐĂNG NHẬP</span>
                                     </div>

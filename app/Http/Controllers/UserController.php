@@ -8,7 +8,6 @@ use App\http\Requests\LoginRequest;
 use App\http\Requests\infoRequest;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\DB;
 
 Session_start();
 class UserController extends Controller
