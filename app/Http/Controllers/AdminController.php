@@ -24,7 +24,7 @@ class AdminController extends Controller
             'password' => $request->password
 
         ];
-        $remember  = $request->has('remember') ? true : false;
+        $remember  = $request->has('remember');
         if (Auth::attempt($arr, $remember)) {
             if (Auth::user()->role == 1) {
                 return redirect()->route('admin.dashboard');

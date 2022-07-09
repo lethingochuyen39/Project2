@@ -29,7 +29,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="" class="table table-bordered table-hover">
+                    <table id="customer" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th style="width: 1%" class="text-center">ID</th>
@@ -99,7 +99,7 @@
 @section('script-section')
 <script>
     $(function() {
-        $('#product').DataTable({
+        $('#customer').DataTable({
             "paging": true,
             "lengthChange": true,
             "searching": true,

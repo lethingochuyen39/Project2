@@ -29,7 +29,7 @@
                     <h3 class="card-title">Bảng Bình luận với các thông tin về bình luận </h3>
                 </div>
                 <div class="card-body">
-                    <table id="product" class="table table-bordered table-hover">
+                    <table id="comment" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th style="width: 1%" class="text-center">
@@ -113,7 +113,7 @@
 @section('script-section')
 <script>
     $(function() {
-        $('#product').DataTable({
+        $('#comment').DataTable({
             "paging": true,
             "lengthChange": true,
             "searching": true,

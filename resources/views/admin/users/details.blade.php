@@ -1,8 +1,5 @@
 @extends('admin.layout-admin')
-@section('title')
-product - details
-@endsection
-
+@section('title', 'Chi tiết Admin)
 @section('content')
 <section class="content">
     <div class="container-fluid">
@@ -11,36 +8,46 @@ product - details
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Chi tiết admin</h3>
+                        <h3 class="card-title">Chi tiết Admin - {{ $p->name }}</h3>
                     </div>
-                    <div class="card-body">
-                        <table id="" class="table table-bordered table-hover">
-                            <tr>
-                                <td>Họ tên</td>
-                                <td><input name="txtUN" value="{{$p->name}}" readonly></td>
-                            <tr>
-                            <tr>
-                                <td>Email</td>
-                                <td><input name="txtemail" value="{{$p->email}}" readonly></td>
-                            </tr>
-                            <tr>
-                                <td>Mật khẩu</td>
-                                <td><input name="txtPwd" value="{{$p->password}}" readonly></td>
-                            </tr>
-                            <tr>
-                                <td>Chức vụ</td>
-                                <td><input type="radio" id="QLSP" name="role" value="1" readonly>
-                                    <label for="QLSP">Quản lý sản phẩm</label><br>
-                                </td>
-                                <td><input type="radio" id="QLKH" name="role" value="2" readonly>
-                                    <label for="QLKH">Quản lý khách hàng</label><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a class="btn btn-primary btn-sm" href="{{Route('admin.users.index')}}">Back</a></td>
-                            </tr>
-                        </table>
-                    </div>
+
+                    <form role="form" action="{{ Route('admin.users.index }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="card-body">
+
+                            <div class="form-group">
+                                <label for="txt-name">Họ tên</label>
+                                <input type="text" class="form-control" id="txt-name" name="name" value="{{ $p->name }}">
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="txt-name">Email</label>
+                                <input type="email" class="form-control" id="txt-email" name="email" value="{{ $p->email }}">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="txt-password">Mật khẩu</label>
+                                <input type="password" class="form-control" id="txt-password" name="password" value="{{ $p->password }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="txt-name">Chức vụ</label></br>
+                                <?php
+
+                                if ($p->role == 1) {
+                                    echo '<span class="badge badge-success">Quản lý sản phẩm</span>';
+                                } elseif (($p->role == 2)) {
+                                    echo '<span class="badge badge-success">Quản lý khách hàng</span>';
+                                } else {
+                                    echo '<span class="badge badge-success">Quản lý</span>';
+                                }
+                                ?>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Quay lại</button>
+                            </div>
+                    </form>
                 </div>
                 <!-- /.card -->
             </div>
@@ -49,7 +56,7 @@ product - details
 </section>
 @endsection
 @section('script-section')
-<script src="{{ asset('plugins/bs-custom-file-input/bs-custom- file-input.min.js') }}"></script>
+<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

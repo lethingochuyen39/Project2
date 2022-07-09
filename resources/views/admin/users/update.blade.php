@@ -52,9 +52,9 @@
                                     @endif</small>
                                 <?php
                                 if ($p->role) {
-                                    if ($p->role == 0) {
+                                    if ($p->role == 3) {
                                         echo '<label for="txt-name">Chức vụ</label></br>
-                                         <input type="radio" id="QL" name="role" value="0" readonly checked>
+                                         <input type="radio" id="QL" name="role" value="3" readonly checked>
                                          <label for="QLSP">Quản lý</label><br>';
                                     }else{
                                         echo ' <label for="txt-name">Chức vụ</label></br>

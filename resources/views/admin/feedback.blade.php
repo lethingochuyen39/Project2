@@ -30,7 +30,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="product" class="table table-bordered table-hover">
+                    <table id="feedback" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th style="width: 1%" class="text-center">
@@ -104,7 +104,7 @@
 @section('script-section')
 <script>
     $(function() {
-        $('#product').DataTable({
+        $('#feedback').DataTable({
             "paging": true,
             "lengthChange": true,
             "searching": true,
