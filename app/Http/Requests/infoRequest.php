@@ -50,7 +50,7 @@ class infoRequest extends FormRequest
             'customer_telephone.digits_between'=>'Số điện thoại chỉ từ 9-12 số !',
             'customer_telephone.max'=>'Số điện thoại dài nhất là 12 số!',
 
-            'customer_password.required' => 'Bạn chưa nhập Mật khẩu!',
+            'customer_password.required' => 'Vui lòng nhập lại mật khẩu!',
             'customer_password.min' => 'Mật khẩu có ít nhất 6 ký tự chữ số!',
             'customer_password.max' => 'Mật khẩu có nhiều nhất 60 ký tự chữ số!',
             // 'customer_password.alpha_num'=>'Mật khẩu chỉ là chữ hoặc số',

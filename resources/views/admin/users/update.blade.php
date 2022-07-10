@@ -44,7 +44,7 @@
                                     <strong class="text-danger">{{ $errors->first('password') }}</strong>
                                     @endif</small>
                                 <label for="txt-password">Mật khẩu</label>
-                                <input type="password" class="form-control" id="txt-password" name="password" value="{{ $p->password }}">
+                                <input type="text" class="form-control" id="txt-password" name="password" value="" placeholder="{{ $p->password }}">
                             </div>
                             <div class="form-group">
                                 <small>@if($errors->has('password'))
@@ -52,7 +52,7 @@
                                     @endif</small>
                                 <?php
                                 if ($p->role) {
-                                    if ($p->role == 3) {
+                                    if ($p->role == 0) {
                                         echo '<label for="txt-name">Chức vụ</label></br>
                                          <input type="radio" id="QL" name="role" value="3" readonly checked>
                                          <label for="QLSP">Quản lý</label><br>';
@@ -69,7 +69,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
                             </div>
                     </form>
                 </div>

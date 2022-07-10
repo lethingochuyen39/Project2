@@ -11,7 +11,7 @@
                         <div class="d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
 
-                                <form action="{{ Route('user.postlogin') }}" method="post">
+                                <form action="{{ Route('customer.postlogin') }}" method="post">
 
                                     <div class="d-flex align-items-center mb-3 pb-1">
                                         <img src="{{ asset('frontend/img/logo9.jpg') }}" style="width: 70px; height: 70px;" alt="SoccerStar">
@@ -49,7 +49,7 @@
                                         <button class="btn btn-primary" type="submit"><span></span>Đăng nhập</button>
                                     </div>
                                 </form>
-                                <p class="mb-5 pb-lg-2" style="padding-top: 15px;">Không có tài khoản? <a href="{{ Route('user.register') }}">Đăng ký ngay</a></p>
+                                <p class="mb-5 pb-lg-2" style="padding-top: 15px;">Không có tài khoản? <a href="{{ Route('customer.register') }}">Đăng ký ngay</a></p>
 
                             </div>
                         </div>

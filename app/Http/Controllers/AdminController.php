@@ -24,23 +24,21 @@ class AdminController extends Controller
             'password' => $request->password
 
         ];
+        // ghi nhớ đăng nhập
         $remember  = $request->has('remember');
         if (Auth::attempt($arr, $remember)) {
-            if (Auth::user()->role == 1) {
+            if (Auth::user()->role == 0) {
                 return redirect()->route('admin.dashboard');
             }
-            elseif (Auth::user()->role == 2) {
+            elseif (Auth::user()->role == 1) {
                 return redirect()->route('admin.customer');
             }
-            elseif (Auth::user()->role == 3) {
-
-                return redirect()->route('admin.login');
-            }elseif (Auth::user()->role == 4) {
+            elseif (Auth::user()->role == 2) {
 
                 return redirect()->route('admin.login');
             }
         } else {
-            return redirect()->route('admin.login')->with('thongbao', 'Email hoặc mật khẩu chưa đúng , vui lòng nhập lại!');
+            return redirect()->route('admin.login')->with('thongbao', 'Email hoặc mật khẩu không đúng , vui lòng nhập lại!');
         }
     }
 
@@ -144,4 +142,6 @@ class AdminController extends Controller
         return redirect()->route('admin.feedback');
     }
     
+
+    // 
 }

@@ -1,5 +1,8 @@
 @extends('admin.layout-admin')
-@section('title', 'Chỉnh sửa tin tức')
+@section('title')
+Thêm tin tức
+@endsection
+
 @section('content')
 <section class="content">
     <div class="container-fluid">
@@ -8,7 +11,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Chỉnh sửa tin tức - {{ $p->name }}</h3>
+                        <h3 class="card-title">Thêm tin tức</h3>
                     </div>
                     <!-- /.card-header -->
                     @if($errors->any())
@@ -21,39 +24,34 @@
                     </div>
                     @endif
                     <!-- form start -->
-                    <form role="form" action="{{ Route('admin.news.postUpdate',$p->news_id) }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ Route('admin.news.postCreate') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="txt-id">Mã tin tức</label>
-                                <input type="text" class="form-control" id="txt-id" name="news_id"  value="{{ $p->news_id }}" readonly>
-                            </div>
-                            <div class="form-group">
                                 <label for="txt-date">Ngày đăng</label>
-                                <input type="datetime-local" class="form-control" id="txt-date" name="news_date" value="{{ $p->news_date }}">
+                                <input type="datetime-local" class="form-control" id="date" name="news_date">
                             </div>
                             <div class="form-group">
-                                <label for="txt-topic">Tiêu đề</label>
-                                <input type="text" class="form-control" id="txt-topic" name="news_topic" value="{{ $p->news_topic }}">
+                                <label for="txt-name">Tiêu đề</label>
+                                <input type="text" class="form-control" id="topic" name="news_topic" placeholder="Nhập tiêu đề bài báo">
                             </div>
                             <div class="form-group">
                                 <label>Nội dung</label>
-                                <textarea class="form-control" cols="50" rows="3" name="news_content" value="">{{ $p->news_content }}</textarea>
+                                <textarea class="form-control" rows="3" name="news_content" placeholder="Nhập nội dung"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="image">Ảnh</label>
-                                <img class="img-fluid" src="{{ url('images/'.$p->news_image) }}" width="100" height="100"/>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="image" name="news_image">
-                                        <label class="custom-file-label" for="image">Chọn ảnh</label>
+                                        <input type="file" id="image" name="news_image">
                                     </div>
+                                    <label class="custom-file-label" for="image">Chọn ảnh</label>
                                 </div>
                             </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Cập nhật</button>
+                            <button type="submit" class="btn btn-primary">Xác nhận</button>
                         </div>
                     </form>
                 </div>
@@ -64,7 +62,8 @@
 </section>
 @endsection
 @section('script-section')
-<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+<script src="{{ asset('plugins/bs-custom-file-input/bs-custom- file-input.min.js') }}"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         bsCustomFileInput.init();

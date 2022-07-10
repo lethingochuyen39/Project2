@@ -8,7 +8,7 @@
             <div class="offset-md-3 col-md-6">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Khách hàng: {{ $p->customer_name }}</h3>
+                        <h3 class="card-title">Khách hàng - {{ $p->customer_name }}</h3>
                     </div>
                     <form role="form" action="{{ route('admin.customer') }}">
                         {{ csrf_field() }}
@@ -23,7 +23,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Số điện thoại</label>
-                                <input type="text" class="form-control" id="txt-price" name="customer_telephone" value="{{ $p->customer_telephone }}">
+                                <input type="text" class="form-control" id="txt-price" name="customer_telephone" value="0{{ $p->customer_telephone }}">
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">E-mail</label>

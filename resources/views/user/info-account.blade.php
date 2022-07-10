@@ -12,7 +12,7 @@
                             <div class="card-body p-4 p-lg-3 text-black">
                                 <span class="h3 fw-bold mb-0" style="color: #ff6219;">Hồ sơ của bạn</span>
                                 @if(Session::has('customer_id'))
-                                <form action="{{ route('user.update',$p->customer_id) }}" method="post" enctype="multipart/form-data" style="margin-top: 1rem;">
+                                <form action="{{ route('customer.update',$p->customer_id) }}" method="post" enctype="multipart/form-data" style="margin-top: 1rem;">
                                     {{ csrf_field() }}
                                     @if(Session::has('thongbao'))
                                     <p style="color: green;">{{Session::get('thongbao')}}</p>
@@ -44,7 +44,7 @@
                                         <div class="input-group input-group-sm mb-3">
 
                                             <span class="input-group-text">Số điện thoại</i></span>
-                                            <input type="text" name="customer_telephone" value="{{$p->customer_telephone}}" class="form-control" />
+                                            <input type="text" name="customer_telephone" value="0{{$p->customer_telephone}}" class="form-control" />
 
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                             @endif</small>
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text">Mật khẩu</i></span>
-                                            <input type="password" name="customer_password" value="{{$p->customer_password}}" class="form-control" />
+                                            <input type="password" name="customer_password" value="" class="form-control" placeholder="{{$p->customer_password}}"/>
 
                                         </div>
                                     </div>
@@ -94,6 +94,15 @@
                                             @endif
 
                                         </div>
+                                        <div class="form-group">
+                                <label for="image">Ảnh</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" id="image" name="news_image">
+                                    </div>
+                                    <label class="custom-file-label" for="image">Chọn ảnh</label>
+                                </div>
+                            </div>
                                         <div class="input-group mb-3">
                                             <input type="file" name="customer_image" class="form-control">
                                             <span class="input-group-text">Chọn ảnh</i></span>

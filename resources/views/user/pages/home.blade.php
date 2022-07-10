@@ -1,16 +1,131 @@
 @extends('user.layout-user')
-@section('title', 'home')
+@section('title', 'trang chủ')
 @section('content')
 
 
 <style>
-    /* * {
-        margin: 0;
-        padding: 0;
-        font-size: 17px;
-        line-height: 2rem;
-        font-family: 'Montserrat', sans-serif;
-    } */
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            width: 750px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            width: 970px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+    }
+
+
+
+    @media (max-width: 767px) {
+        #featureContainer .carousel-inner .carousel-item>div {
+            display: none;
+        }
+
+        #featureContainer .carousel-inner .carousel-item>div:first-child {
+            display: block;
+        }
+    }
+
+    #featureContainer .carousel-inner .carousel-item.active,
+    #featureContainer .carousel-inner .carousel-item-next,
+    #featureContainer .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
+
+    /* medium and up screens */
+    @media (min-width: 768px) {
+
+        #featureContainer .carousel-inner .carousel-item-end.active,
+        #featureContainer .carousel-inner .carousel-item-next {
+            transform: translateX(25%);
+        }
+
+        #featureContainer .carousel-inner .carousel-item-start.active,
+        #featureContainer .carousel-inner .carousel-item-prev {
+            transform: translateX(-25%);
+        }
+
+        #featureContainer .card img {
+            width: 90%;
+            height: 40vh;
+        }
+
+        #featureContainer .carousel-item {
+            justify-content: space-between;
+        }
+    }
+
+    @media (max-width: 767px) {
+        #featureContainer .card img {
+            width: 100%;
+            height: 75vh;
+        }
+    }
+
+    #featureContainer .carousel-inner .carousel-item-end,
+    #featureContainer .carousel-inner .carousel-item-start {
+        transform: translateX(0);
+    }
+
+    #featureContainer .card {
+        border: 0;
+    }
+
+    #featureContainer .card {
+        position: relative;
+    }
+
+    #featureContainer .card .card-img-overlays {
+        position: absolute;
+        bottom: 15%;
+        left: 10%;
+        color: #fff;
+        font-weight: bolder;
+    }
+
+    #featureContainer a {
+        text-decoration: none;
+    }
+
+    #featureContainer .indicator {
+        border: 1px solid rgb(202, 202, 202);
+        padding: 3px 6px 3px 6px;
+    }
+
+    #featureContainer .indicator:hover {
+        background-color: blue;
+        border: 1px solid blue;
+        transition: 200ms;
+    }
+
+    #featureContainer .indicator:hover {
+        color: white;
+        transition: 200ms;
+    }
+
+    #featureContainer .indicator {
+        color: lightgray;
+    }
+
+    #featureContainer .float-end {
+        padding-top: 10px;
+    }
+
     .info-1 {
         background-image: url("{{ asset('frontend/img/banner_giay.jpg') }}");
         background-size: cover;
@@ -31,8 +146,80 @@
         background-position: center;
         display: block;
     }
+
     /*(----------Info-End--------)*/
 </style>
+<h2 class="font-weight-light float-start">Bootstrap 5 Multi Item Carousel</h2>
+<div class="float-end pe-md-4">
+    <a class="indicator" href="#featureCarousel" role="button" data-bs-slide="prev">
+        <span class="fas fa-chevron-left" aria-hidden="true"></span>
+    </a> &nbsp;&nbsp;
+    <a class="w-aut indicator" href="#featureCarousel" role="button" data-bs-slide="next">
+        <span class="fas fa-chevron-right" aria-hidden="true"></span>
+    </a>
+</div>
+<div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://source.unsplash.com/JTkibpa_Xv4/450x650" class="img-fluid">
+                </div>
+                <div class="card-img-overlays">Slide 1</div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://source.unsplash.com/m-eNBfYYrbA/450x650" class="img-fluid">
+                </div>
+                <div class="card-img-overlays">Slide 2</div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://source.unsplash.com/W2XfQIptWYs/450x650" class="img-fluid">
+                </div>
+                <div class="card-img-overlays">Slide 3</div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://source.unsplash.com/txX3cXgiAzU/450x650" class="img-fluid">
+                </div>
+                <div class="card-img-overlays">Slide 4</div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://source.unsplash.com/2zjKnJsT7D0/450x650" class="img-fluid">
+                </div>
+                <div class="card-img-overlays">Slide 5</div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://source.unsplash.com/AvnXTPOPVHY/450x650" class="img-fluid">
+                </div>
+                <div class="card-img-overlays">Slide 6</div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--Introduction-->
 <div class="container-fluid" id="topic">
@@ -123,6 +310,37 @@
     </div>
 </div>
 <!--Introduction-->
+<div class="recommended_items">
+    <!--recommended_items-->
+    <h2 class="title text-center">Sản phẩm liên quan</h2>
+
+    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center product-related">
+                                <img src="{{ asset('frontend/img/carousel_2.jpg') }}" alt="" />
+                                <h2>2000,000/h2>
+                                    <p>ten san pham</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!--/recommended_items-->
 
 <section id="giay" class="info-1 d-flex justify-content-center align-items-end">
     <div class="container mb-3 py-2 mb-md-1 mb-lg-0 py-lg-4 d-flex justify-content-center align-items-center">

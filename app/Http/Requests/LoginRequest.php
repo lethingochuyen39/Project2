@@ -37,7 +37,7 @@ class LoginRequest extends FormRequest
             'customer_email.unique'=>'Email phải là duy nhất!',
             'customer_email.email'=>'Email không đúng định dạng!',
 
-            'customer_password.required'=>'Bạn chưa nhập Mật khẩu',
+            'customer_password.required'=>'Bạn chưa nhập mật khẩu',
             'customer_password.min'=>'Mật khẩu có ít nhất 6 ký tự chữ số',
             'customer_password.max'=>'Mật khẩu có nhiều nhất 60 ký tự chữ số',
            

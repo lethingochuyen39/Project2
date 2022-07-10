@@ -24,7 +24,7 @@
                 @endif
 
                 <div class="p-4">
-                    <form action="{{ Route('user.add') }}" method="post">
+                    <form action="{{ Route('customer.add') }}" method="post">
                         {{ csrf_field() }}
                         <small>@if($errors->has('customer_name'))
                             <strong class="text-danger">{{ $errors->first('customer_name') }}</strong>
@@ -72,7 +72,7 @@
                             <button class="btn btn-primary" type="submit"><span></span> Đăng ký</button>
                         </div>
                         <p class="text-center mt-3">Bạn đã có tài khoản?
-                            <a href="{{ route('user.login') }}"><span class="text-primary">Đăng nhập</span></a>
+                            <a href="{{ route('customer.login') }}"><span class="text-primary">Đăng nhập</span></a>
 
                         </p>
                     </form>

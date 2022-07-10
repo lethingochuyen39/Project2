@@ -57,7 +57,7 @@
                                         </ul>
                                     </small>
                                 </td>
-                                <td> {{ $p->customer_telephone }}</td>
+                                <td> 0{{ $p->customer_telephone }}</td>
                                 <td>{{ $p->customer_email }}</td>
 
                                 <td>{{ $p->customer_address }}</td>

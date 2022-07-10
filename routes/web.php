@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UsersController;
@@ -68,20 +68,34 @@ Route::get('admin/news/{news_id}/delete', [NewsController::class, 'delete'])->na
 Route::get('admin/news/{news_id}/details', [NewsController::class, 'details'])->name('admin.news.details');
 
 
+
+
+
+
+
 //user
-Route::get('user/pages/home',[UserController::class,'home'])->name('user.home');
+// custome (trang chủ), đăng ký , đăng nhập, thông tin
+Route::get('user/pages/home',[CustomerController::class,'home'])->name('customer.home');
 
-Route::get('user/register-user',[UserController::class,'register'])->name('user.register');
+Route::get('user/register-user',[CustomerController::class,'register'])->name('customer.register');
 
-Route::post('user/add',[UserController::class,'add'])->name('user.add');
+Route::post('user/add',[CustomerController::class,'add'])->name('customer.add');
 
-Route::get('user/logout',[UserController::class,'logout'])->name('user.logout');
+Route::get('user/logout',[CustomerController::class,'logout'])->name('customer.logout');
 
-Route::get('user/login-user',[UserController::class,'login'])->name('user.login');
+Route::get('user/login-user',[CustomerController::class,'login'])->name('customer.login');
 
-Route::post('user/postlogin-user',[UserController::class,'postlogin'])->name('user.postlogin');
+Route::post('user/postlogin-user',[CustomerController::class,'postlogin'])->name('customer.postlogin');
 
-Route::get('user/info-account',[UserController::class,'account'])->name('user.account');
+Route::get('user/info-account',[CustomerController::class,'account'])->name('customer.account');
 
-Route::post('user/update-user',[UserController::class,'update'])->name('user.update');
+Route::post('user/update-user',[CustomerController::class,'update'])->name('customer.update');
+
+
+
+// liên hệ
+Route::get('user/pages/contact',[CustomerController::class,'contact'])->name('customer.contact');
+
+Route::post('user/postContact',[CustomerController::class,'postContact'])->name('customer.postContact');
+
 
