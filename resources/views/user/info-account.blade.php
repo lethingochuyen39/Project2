@@ -94,15 +94,7 @@
                                             @endif
 
                                         </div>
-                                        <div class="form-group">
-                                <label for="image">Ảnh</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" id="image" name="news_image">
-                                    </div>
-                                    <label class="custom-file-label" for="image">Chọn ảnh</label>
-                                </div>
-                            </div>
+                                     
                                         <div class="input-group mb-3">
                                             <input type="file" name="customer_image" class="form-control">
                                             <span class="input-group-text">Chọn ảnh</i></span>

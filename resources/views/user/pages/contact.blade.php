@@ -172,7 +172,9 @@
         background-image: url("{{ asset('frontend/img/Contact_Us.jpg') }}");
         background-size: cover;
         background-repeat: no-repeat;
-        height: 100vh;
+        width: 100%;
+        height: 450px;
+        /* height: 100vh; */
         background-position: center;
         display: block;
         background-color: rgba(255, 255, 255, 0.3);
