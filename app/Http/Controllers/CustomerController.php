@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\http\Requests\RegisterRequest;
 use App\http\Requests\LoginRequest;
 use App\http\Requests\infoRequest;
+use App\http\Requests\ContactRequest;
 use App\Models\Customer;
 use App\Models\Feedback;
 use Illuminate\Support\Facades\Session;
@@ -154,18 +155,16 @@ class CustomerController extends Controller
         return view('user.pages.contact');
     }
 
-    public function postContact(Request $request){
-
-        $feedback_name = $request->feedback_name;
-        $feedback_email = $request->feedback_email;
-        $feedback_content = $request->feedback_content;
-        $p = new Feedback();
-        $p->feedback_name = $feedback_name;
-        $p->feedback_email = $feedback_email;
-        $p->feedback_content = $feedback_content;
-        $p->save();
+    public function post_contact(ContactRequest $request){
         
+        $feedback = $request->all();
+        $p = new Feedback($feedback);
+        $p->name = $feedback['feedback_name'];
+        $p->email = $feedback['feedback_email'];
+        $p->role = $feedback['feedback_content'];
+        $p->save();
         return redirect()->route('customer.contact')->with('thongbao', 'Cảm ơn bạn đã phản hồi về website');
 
     }
+    
 }

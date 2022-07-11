@@ -44,15 +44,18 @@ class UsersController extends Controller
         $p->save();
         return redirect()->route('admin.users.index');
     }
+   
+    public function details($id)
+    {
+        $p = User::find($id);
+        return view('admin.users.details', ['p' => $p]);
+    }
+
     public function delete($id)
     {
         $p = User::find($id);
         $p->delete();
         return redirect()->route('admin.users.index');
-    }
-    public function details($id)
-    {
-        $p = User::find($id);
-        return view('admin.users.details', ['p' => $p]);
+     
     }
 }

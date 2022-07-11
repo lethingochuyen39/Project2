@@ -64,12 +64,15 @@
                                     <a class="btn btn-primary btn-sm" href="{{Route('admin.users.details',$p->id)}}">
                                         <i class="fas fa-folder"></i>Xem
                                     </a>
+
                                     <a class="btn btn-info btn-sm" href="{{ Route('admin.users.update',$p->id) }}">
                                         <i class="fas fa-folder"></i>Sửa
                                     </a>
-                                    <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{ Route('admin.users.delete',$p->id) }}">
+
+                                    <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ Route('admin.users.delete',$p->id) }}">
                                         <i class="fas fa-trash"></i>Xóa
                                     </a>
+
                                 </td>
                             </tr>
                             @endforeach
