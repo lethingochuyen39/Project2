@@ -34,7 +34,7 @@ return new class extends Migration
         );
         DB::table('users')->insert(
             [
-                'name' => 'Bình',
+                'name' => 'Bình Lê',
                 'email' => 'binh@gmail.com',
                 'password' => bcrypt('123456'),
                 'role' => '2'
@@ -42,10 +42,10 @@ return new class extends Migration
         );
         DB::table('users')->insert(
             [
-                'name' => 'An',
+                'name' => 'Lê Văn An',
                 'email' => 'an@gmail.com',
                 'password' => bcrypt('123456'),
-                'role' => '3'
+                'role' => '0'
             ]
         );
     }

@@ -24,7 +24,7 @@ class UsersRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:5|max:15',
+            'name' => 'required|min:5|max:100',
             'email' => 'Required|email',
             'password' => 'required',
             'role' => 'required'
@@ -34,13 +34,13 @@ class UsersRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Username is required',
-            'name.min' => 'Minimum of username is 5',
-            'name.max' => 'Maximum of username is 15',
-            'password.required' => 'Password is required',
-            'role.required' => 'Role is required',
-            'email.required'=>'Email is required',
-            'email.email'=>'Email can not format',
+            'name.required' => 'Bạn chưa nhập họ tên',
+            'name.min' => 'Họ tên ít nhất là 5 ký tự',
+            'name.max' => 'Họ tên dài nhất là 100 ký tự',
+            'password.required' => 'Bạn chưa nhập Mật khẩu',
+            'role.required' => 'Bạn chưa chọn chức vụ',
+            'email.required'=>'Bạn chưa nhập email',
+            'email.email'=>'E-mail chưa đúng định dạng',
         ];
     }
 }

@@ -26,6 +26,7 @@ class AdminController extends Controller
         ];
         // ghi nhớ đăng nhập
         $remember  = $request->has('remember');
+        
         if (Auth::attempt($arr, $remember)) {
             if (Auth::user()->role == 0) {
                 return redirect()->route('admin.dashboard');

@@ -51,7 +51,7 @@ class NewsController extends Controller
         $p->news_topic = $news['news_topic'];
         $p->news_content = $news['news_content'];
         $p->save();
-        return redirect()->route('addmin.news.index');
+        return redirect()->route('admin.news.index');
     }
     public function delete($news_id)
     {

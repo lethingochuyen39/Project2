@@ -36,7 +36,7 @@
                                 <input type="text" class="form-control" id="txt-password" name="password" value="{{$p->password}}">
                             </div>
                             <div class="form-group">
-                               
+
                                 <label for="txt-name">Chức vụ</label></br>
                             
                                 <?php

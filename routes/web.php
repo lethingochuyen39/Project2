@@ -5,7 +5,6 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\FeedbackController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -99,5 +98,7 @@ Route::get('user/pages/contact',[CustomerController::class,'contact'])->name('cu
 
 Route::post('user/post-Contact',[CustomerController::class,'postContact'])->name('customer.postContact');
 
+
+// 
 
 

@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Admin</h1>
+                <h1>Tin tức</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -49,13 +49,11 @@
                                 <td><img width="100px" src="{{url('images/'.$p->news_image) }}" /></td>
                                 <td class="text-right">
                                     <a class="btn btn-primary btn-sm" href="{{Route('admin.news.details',$p->news_id)}}">
-                                        <i class="fas fa-folder"></i> View</a>
+                                        <i class="fas fa-folder"></i> Xem</a>
                                     <a class="btn btn-info btn-sm" href="{{ Route('admin.news.update',$p->news_id) }}">
-                                        <i class="fas fa-pencil-alt"></i> Edit
-                                    </a>
-                                    <a class="btn btn-danger btn-sm" href="{{ Route('admin.news.delete',$p->news_id) }}">
-                                        <i class="fas fa-trash"></i> Delete
-                                    </a>
+                                        <i class="fas fa-pencil-alt"></i> Sửa</a>
+                                    <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ Route('admin.news.delete',$p->news_id) }}">
+                                        <i class="fas fa-trash"></i> Xóa</a>
                                 </td>
                             </tr>
                             @endforeach
