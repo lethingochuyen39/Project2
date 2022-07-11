@@ -25,7 +25,7 @@ class ContactRequest extends FormRequest
         return [
             'feedback_name' => 'Required|string|min:3|max:100',
             'feedback_email' => 'Required|email',
-            'feedback_content' => 'Required|string|min:50|max:1000'
+            'feedback_content' => 'Required|string|min:20|max:1000'
         ];
     }
 
@@ -40,7 +40,7 @@ class ContactRequest extends FormRequest
             'feedback_email.email'=>'Email không đúng định dạng!',
 
             'feedback_content.required'=>'Bạn chưa nhập nội dung phản hồi!',
-            'feedback_content.min'=>'Nội dung ít nhất là 50 ký tự!',
+            'feedback_content.min'=>'Nội dung ít nhất là 20 ký tự!',
             'feedback_content.max'=>'Nội dung dài nhất là 1000 ký tự!'
 
         ];

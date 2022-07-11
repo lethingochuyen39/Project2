@@ -183,7 +183,7 @@
     /*(----------Contact Section-end--------)*/
 </style>
 
-<section class="header d-flex flex-column justify-content-center align-content-center">
+<section class="header d-flex flex-column justify-content-center align-content-center" >
 
     <!-- Section Intro -->
     <section class="header d-flex justify-content-start align-items-center ">
@@ -210,7 +210,7 @@
         <div class="row">
             <div class="col-lg-5">
                 <div class="contact-info">
-                    <h4>Liên Hệ SoccerStar</h4>
+                    <h4 style=" color:#006600; font-weight: bolder; text-shadow: 1px 0px 1px rgb(10, 2, 32);">Liên Hệ SoccerStar</h4>
                     <div class="contact-address">
                         <div class="ca-widget">
                             <div class="cw-icon">
@@ -242,38 +242,53 @@
                     </div>
                 </div>
             </div>
-
+            <!-- pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$" -->
             <div class="col-lg-7">
                 <div class="contact-form">
-                    <h4>Phản hồi với chúng tôi</h4>
+                    <h4 style=" color:#006600; font-weight: bolder; text-shadow: 1px 0px 1px rgb(10, 2, 32);">Phản hồi với chúng tôi</h4>
                     @if(Session::has('thongbao'))
-                    <p style="color: red;">{{Session::get('thongbao')}}</p>
+                    <p style="color: green; font-weight: bold; font-size: large;">{{Session::get('thongbao')}}</p>
                     @endif
-                    <form action="{{ route('customer.postContact') }}" method="POST">
+                 
+                    <form action="{{ Route('customer.postContact') }}" method="post">
+                        {{ csrf_field() }}
                         <div class="row">
                             <div class="col-lg-6">
-                                <small>@if($errors->has('feedback_name'))
-                                    <strong class="text-danger">{{ $errors->first('feedback_name') }}</strong>
-                                    @endif</small>
-                                <div class="form-group">
-                                    <input type="text" name="feedback_name" ng-model="name" class="form-control" placeholder="Họ tên của bạn">
+                                <label>
+                                    <small>
+                                        @if($errors->has('feedback_name'))
+                                        <strong class="text-danger">{{ $errors->first('feedback_name') }}</strong>
+                                        @endif
+                                    </small>
+                                </label>
 
-                                </div>
+                                <input type="text" name="feedback_name" class="form-control" placeholder="Họ tên của bạn">
                             </div>
                             <div class="col-lg-6">
-                                <small>@if($errors->has('feedback_email'))
-                                    <strong class="text-danger">{{ $errors->first('feedback_email') }}</strong>
-                                    @endif</small>
-                                <!-- pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$" -->
-                                <input type="email" name="feedback_email" id="email" class="form-control" placeholder="E-mail của bạn">
+                                <label>
+                                    <small>
+                                        @if($errors->has('feedback_email'))
+                                        <strong class="text-danger">{{ $errors->first('feedback_email') }}</strong>
+                                        @endif
+                                    </small>
+                                </label>
+                                <input type="email" name="feedback_email" class="form-control" placeholder="E-mail của bạn">
+
                             </div>
-                            <div class="col-lg-12">
-                                <small>@if($errors->has('feedback_email'))
-                                    <strong class="text-danger">{{ $errors->first('feedback_email') }}</strong>
-                                    @endif</small>
-                                <textarea placeholder="Nội dung phản hồi với chúng tôi..." name="feedback_content" class="form-control"></textarea>
-                                <button type="submit">Gửi phản hồi</button>
-                            </div>
+                        </div>
+                        <div class="col-lg-12">
+
+                            <label>
+                                <small>
+                                    @if($errors->has('feedback_content'))
+                                    <strong class="text-danger">{{ $errors->first('feedback_content') }}</strong>
+                                    @endif
+                                </small>
+                            </label>
+
+                            <textarea name="feedback_content" id="" cols="30" rows="10" placeholder="Nội dung phản hồi với chúng tôi..." class="form-control"></textarea>
+                            <button class="btn btn-primary" type="submit"><span></span> Gửi phản hồi</button>
+
                         </div>
                     </form>
                 </div>

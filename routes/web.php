@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\FeedbackController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -93,10 +94,10 @@ Route::post('user/update-user',[CustomerController::class,'update'])->name('cust
 
 
 
-// liên hệ
+// contact
 Route::get('user/pages/contact',[CustomerController::class,'contact'])->name('customer.contact');
 
-Route::post('user/post-Contact',[CustomerController::class,'post_contact'])->name('customer.postContact');
+Route::post('user/post-Contact',[CustomerController::class,'postContact'])->name('customer.postContact');
 
 
 

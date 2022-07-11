@@ -147,21 +147,20 @@ class CustomerController extends Controller
         return redirect()->route('customer.account')->with('thongbao', 'Cập nhật tài khoản thành công.');
     }
 
-
-
-    //liên hệ
-    
+// liên hệ
     public function contact(){
         return view('user.pages.contact');
     }
 
-    public function post_contact(ContactRequest $request){
-        
-        $feedback = $request->all();
-        $p = new Feedback($feedback);
-        $p->name = $feedback['feedback_name'];
-        $p->email = $feedback['feedback_email'];
-        $p->role = $feedback['feedback_content'];
+    public function postContact(ContactRequest $request){
+        $feedback_name = $request->feedback_name;
+        $feedback_email = $request->feedback_email;
+        $feedback_content = $request->feedback_content;
+       
+        $p = new Feedback();
+        $p->feedback_name =  $feedback_name ;
+        $p->feedback_email =$feedback_email;
+        $p->feedback_content =  $feedback_content;
         $p->save();
         return redirect()->route('customer.contact')->with('thongbao', 'Cảm ơn bạn đã phản hồi về website');
 
