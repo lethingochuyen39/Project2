@@ -12,7 +12,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">trang chủ</a></li>
+                    <li class="breadcrumb-item">Trang chủ</li>
                     <li class="breadcrumb-item active">Phản hồi</li>
                 </ol>
             </div>
@@ -26,7 +26,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Bảng Phản hồi với các thông tin về khách hàng</h3>
+                    <h3 class="card-title">Bảng Phản hồi</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">

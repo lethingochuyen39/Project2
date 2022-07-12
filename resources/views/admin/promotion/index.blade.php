@@ -11,7 +11,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">trang chủ</a></li>
+                    <li class="breadcrumb-item">Trang chủ</li>
                     <li class="breadcrumb-item active">Khuyến mãi</li>
                 </ol>
             </div>

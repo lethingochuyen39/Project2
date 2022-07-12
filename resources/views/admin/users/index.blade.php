@@ -10,7 +10,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">trang chủ</a></li>
+                    <li class="breadcrumb-item">Trang chủ</li>
                     <li class="breadcrumb-item active">Admin</li>
                 </ol>
             </div>
@@ -24,7 +24,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Bảng Admin với các thông tin về Admin </h3>
+                    <h3 class="card-title">Bảng Admin </h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">

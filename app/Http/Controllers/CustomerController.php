@@ -156,11 +156,16 @@ class CustomerController extends Controller
         $feedback_name = $request->feedback_name;
         $feedback_email = $request->feedback_email;
         $feedback_content = $request->feedback_content;
-       
+       if(Session::has('customer_id')){
+        $customer_id  =  Session::get('customer_id');
+       }else{
+        $customer_id  = null;
+       }
         $p = new Feedback();
         $p->feedback_name =  $feedback_name ;
         $p->feedback_email =$feedback_email;
         $p->feedback_content =  $feedback_content;
+        $p->customer_id =  $customer_id;
         $p->save();
         return redirect()->route('customer.contact')->with('thongbao', 'Cảm ơn bạn đã phản hồi về website');
 

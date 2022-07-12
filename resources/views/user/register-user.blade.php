@@ -10,10 +10,10 @@
                     <h3 class="h3 fw-bold mb-0" style="color: #ff6219;">Đăng ký tài khoản</h3>
                 </div>
                 @if(Session::has('thongbao'))
-                <p style="color: red;">{{Session::get('thongbao')}}</p>
+                <p style="color: green;">{{Session::get('thongbao')}}</p>
                 @endif
 
-                <div class="p-4">
+                <div class="p-3">
                     <form action="{{ Route('customer.add') }}" method="post">
                         {{ csrf_field() }}
                         <small>@if($errors->has('customer_name'))

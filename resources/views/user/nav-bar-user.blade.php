@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="dropdown " style=" font-style: italic; color: #F0F0F0;">
-                    <!-- SOCCERSTAR --> SoccerStar - Luôn cam kết hàng chính hãng
+                 SoccerStar - Luôn cam kết hàng chính hãng
                     @if(Session::has('customer_name'))
                     <p style="color: #F0F0F0; margin-bottom:0px;" class="nav-link float-end dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">

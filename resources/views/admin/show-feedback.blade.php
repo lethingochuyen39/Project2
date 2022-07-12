@@ -8,7 +8,7 @@
             <div class="offset-md-3 col-md-6" >
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Tài khoản: {{ $p->feedback_name }}</h3>
+                        <h3 class="card-title">Tài khoản - {{ $p->feedback_name }}</h3>
                     </div>
                     <!-- form start -->
                     <form role="form" action="{{ route('admin.feedback') }}">
@@ -18,6 +18,13 @@
                                 <label for="txt-id">Mã phản hồi</label>
                                 <input type="text" class="form-control" id="txt-id" name="feedback_id" value="{{ $p->feedback_id }}" readonly>
                             </div>
+                            @if($p->customer_id)
+                             <div class="form-group">
+                                <label for="txt-name">Mã khách hàng</label>
+                                <input type="text" class="form-control" id="txt-name" name="customer_id" value="{{ $p->customer_id }}" readonly>
+                            </div>
+                            @endif
+
                             <div class="form-group">
                                 <label for="txt-name">Họ tên</label>
                                 <input type="text" class="form-control" id="txt-name" name="feedback_name" value="{{ $p->feedback_name }}" readonly>
@@ -36,7 +43,7 @@
                             </div>
 
                         </div>
-                        <div class="col-3 mx-auto" style="margin-bottom: 30px;">
+                        <div class="col-3 mx-auto " style="margin-bottom: 30px;">
                             <button type="submit" class="btn btn-primary btn-block"> Quay lại</button>
                         </div>
                     </form>

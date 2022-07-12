@@ -46,12 +46,12 @@ class RegisterRequest extends FormRequest
 
             'customer_telephone.required'=>'Bạn chưa nhập số điện thoại!',
             'customer_telephone.numeric'=>'Số điện thoại phải là số!',
-             'customer_telephone.digits_between'=>'Số điện thoại chỉ từ 9-12 số !',
+             'customer_telephone.digits_between'=>'Số điện thoại chỉ từ 9 đến 12 số !',
              'customer_telephone.max'=>'Số điện thoại dài nhất là 12 số!',
 
             'customer_password.required'=>'Bạn chưa nhập Mật khẩu!',
-            'customer_password.min'=>'Mật khẩu có ít nhất 6 ký tự chữ số!',
-            'customer_password.max'=>'Mật khẩu có nhiều nhất 60 ký tự chữ số!',
+            'customer_password.min'=>'Mật khẩu có ít nhất 6 ký tự!',
+            'customer_password.max'=>'Mật khẩu có nhiều nhất 60 ký tự!',
 
             'customer_confirm_password.required'=>'Bạn chưa nhập lại Mật khẩu!',
             'customer_confirm_password.same'=>'Mật khẩu chưa khớp!'

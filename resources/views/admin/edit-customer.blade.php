@@ -9,7 +9,7 @@
                 <div class="card card-primary">
                     <div class="card-header">
 
-                        <h3 class="card-title">Cập nhật trạng thái: {{ $p->customer_name }}</h3>
+                        <h3 class="card-title">Cập nhật trạng thái - {{ $p->customer_name }}</h3>
                     </div>
                     <!-- form start -->
                     <form role="form" action="{{ route('admin.postEditCustomer', $p->customer_id) }}" method="post">

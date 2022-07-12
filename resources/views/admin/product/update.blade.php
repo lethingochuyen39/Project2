@@ -1,5 +1,4 @@
-<!-- lưu tại /resources/views/product/create.blade.php -->
-<!-- lưu tại /resources/views/product/create.blade.php -->
+
 @extends('admin.layout-admin')
 @section('title', 'Cập nhật sản phẩm')
 @section('content')
@@ -52,7 +51,7 @@
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="image" name="product_image">
-                                        <label class="custom-file-label" for="image">Choose Image</label>
+                                        <label class="custom-file-label" for="image">Chọn ảnh</label>
                                     </div>
                                 </div>
                             </div>

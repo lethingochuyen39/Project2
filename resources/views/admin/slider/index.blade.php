@@ -11,7 +11,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item">Trang chủ</li>
                     <li class="breadcrumb-item active">Slider
         </div>
     </div><!-- /.container-fluid -->
@@ -47,10 +47,10 @@
                                 <td class="text-right">
 
                                     <a class="btn btn-info btn-sm" href="{{ Route('slider.update',$p->id) }}">
-                                        <i class="fas fa-pencil-alt"></i> Edit
+                                        <i class="fas fa-pencil-alt"></i> Sửa
                                     </a>
                                     <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');"  href="{{ Route('slider.delete',$p->id) }}">
-                                        <i class="fas fa-trash"></i> Delete
+                                        <i class="fas fa-trash"></i> Xóa
                                     </a>
                                 </td>
                             </tr>

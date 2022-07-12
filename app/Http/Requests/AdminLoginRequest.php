@@ -25,7 +25,7 @@ class AdminLoginRequest extends FormRequest
     {
         return [
             'email' => 'Required|email',
-            'password'=>'Required|min:6|max:10'
+            'password'=>'Required|min:6|max:50'
 
         ];
     }
@@ -33,12 +33,11 @@ class AdminLoginRequest extends FormRequest
     {
         return [
             'email.required'=>'Bạn chưa nhập e-mail!',
-            'email.unique'=>'Email phải là duy nhất!',
             'email'=>'Email không đúng định dạng!',
 
             'password.required'=>'Bạn chưa nhập Mật khẩu!',
             'password.min'=>'Mật khẩu có ít nhất 6 ký tự chữ số!',
-            'password.max'=>'Mật khẩu có nhiều nhất 10 ký tự chữ số!',
+            'password.max'=>'Mật khẩu có nhiều nhất 50 ký tự chữ số!',
           
         ];
     }

@@ -11,7 +11,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">trang chủ</a></li>
+                    <li class="breadcrumb-item">Trang chủ</li>
                     <li class="breadcrumb-item active">Loại Sản phẩm</li>
                 </ol>
             </div>
@@ -25,7 +25,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Products table with details of product</h3>
+                    <h3 class="card-title">Bảng loại sản phẩm</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -34,7 +34,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Tên</th>
-                                <th></th>
+                                <th>Tùy chọn</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,24 +44,16 @@
                                 <td>{{ $p->product_type_name }}</td>
                                 <td class="text-right">
                                     <a class="btn btn-info btn-sm" href="{{ Route('productType.update',$p->id) }}">
-                                        <i class="fas fa-pencil-alt"></i> Edit
+                                        <i class="fas fa-pencil-alt"></i> Sửa
                                     </a>
                                     <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');"  href="{{ Route('productType.delete',$p->id) }}">
-                                        <i class="fas fa-trash"></i> Delete
+                                        <i class="fas fa-trash"></i> Xóa
                                     </a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <!-- <th>Product Id</th>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Image</th>
-                                <th></th> -->
-                            </tr>
-                        </tfoot>
+                       
                     </table>
                 </div>
                 <!-- /.card-body -->

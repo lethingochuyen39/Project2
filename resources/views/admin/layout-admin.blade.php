@@ -84,7 +84,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fab fa-creative-commons-by"></i>
+                                <i class="nav-icon far fa-address-book"></i>
                                 <p>
                                     Khách hàng
                                     <i class="fas fa-angle-left right"></i>
@@ -103,7 +103,7 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Sản phẩm
                                     <i class="right fas fa-angle-left"></i>
@@ -128,7 +128,7 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fab fa-empire"></i>
+                                <i class="nav-icon fas fa-sitemap"></i>
                                 <p>
                                     Loại sản phẩm
                                     <i class="right fas fa-angle-left"></i>
@@ -152,7 +152,7 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fab fa-codepen"></i>
+                                <i class="nav-icon fab fa-empire"></i>
                                 <p>
                                     Thương hiệu
                                     <i class="right fas fa-angle-left"></i>
@@ -175,7 +175,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fab fa-medapps"></i>
+                                <i class="nav-icon 	fas fa-snowflake"></i>
                                 <p>
                                     Khuyến mãi
                                     <i class="right fas fa-angle-left"></i>
@@ -319,7 +319,7 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fas fa-user-tie"></i>
                                 <p>
                                     Admin
                                     <i class="right fas fa-angle-left"></i>
