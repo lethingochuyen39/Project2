@@ -20,9 +20,9 @@ return new class extends Migration
             // $table->boolean('infinite_promotion');
             $table->timestamp('promotion_time_start')->useCurrent();
             $table->timestamp('promotion_time_end')->nullable();
-            $table->integer('promotion_value')->unsigned()->nullable();
+            $table->integer('promotion_value')->unsigned();
 
-            $table->integer('product_id')->unsigned();
+            $table->integer('product_id')->unsigned()->nullable();
             $table->foreign('product_id')
                 ->references('id')->on('products');
 

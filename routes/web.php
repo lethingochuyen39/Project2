@@ -17,6 +17,10 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\BrandController;
 
+//Tuan
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\OrderDetailsController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -119,6 +123,21 @@ Route::get('admin/promotion/{id}/update}',[PromotionController::class,'update'])
 Route::post('admin/promotion/{id}/postUpdate',[PromotionController::class,'postUpdate'])->name('promotion.postUpdate');
 Route::get('admin/promotion/{id}/delete',[PromotionController::class,'delete'])->name('promotion.delete');
 Route::get('admin/promotion/{id}/details',[PromotionController::class,'details'])->name('promotion.details');
+
+//Tuan
+//order
+Route::get('admin/orders/index', [OrdersController::class, 'index'])->name('orders.index');
+Route::get('admin/orders/{orders_id}/update', [OrdersController::class, 'update'])->name('orders.update');
+Route::post('admin/orders/{orders_id}/postUpdate', [OrdersController::class, 'postUpdate'])->name('orders.postUpdate');
+Route::get('admin/orders/{orders_id}/delete', [OrdersController::class, 'delete'])->name('orders.delete');
+Route::get('admin/orders/{orders_id}/details', [OrdersController::class, 'details'])->name('orders.details');
+
+//orderDetails
+Route::get('admin/orderdetails/index', [OrderDetailsController::class, 'index'])->name('orderdetails.index');
+Route::get('admin/orderdetails/{orderDetail_id}/update', [OrderDetailsController::class, 'update'])->name('orderdetails.update');
+Route::post('admin/orderdetails/{orderDetail_id}/postUpdate', [OrderDetailsController::class, 'postUpdate'])->name('orderdetails.postUpdate');
+Route::get('admin/orderdetails/{orderDetail_id}/delete', [OrderDetailsController::class, 'delete'])->name('orderdetails.delete');
+Route::get('admin/orderdetails/{orderDetail_id}/details', [OrderDetailsController::class, 'details'])->name('orderdetails.details');
 
 /*(-------ADMIN END--------)*/
 

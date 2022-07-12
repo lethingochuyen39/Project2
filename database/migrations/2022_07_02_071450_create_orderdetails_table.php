@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('orderdetails', function (Blueprint $table) {
             $table->increments('orderDetail_id');
             $table->integer('orderDetail_quantity')->unsigned();
-            $table->float('orderDetail_price');
+            $table->integer('orderDetail_price');
             $table->integer('product_size')->unsigned()->nullable();
             $table->integer('order_id')->unsigned();
             $table->foreign('order_id')

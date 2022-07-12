@@ -21,7 +21,9 @@ return new class extends Migration
             $table->boolean('product_highlight')->default(0);
             $table->timestamp('product_date')->useCurrent();
             $table->text('product_description', 1000)->nullable();
-            $table->string('product_image', 255)->nullable();
+            $table->string('product_image', 255);
+            // $table->string('product_warranty', 20)->nullable();
+            
             $table->integer('product_type_id')->unsigned();
             $table->foreign('product_type_id')
                 ->references('id')->on('product_types');

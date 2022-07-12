@@ -26,7 +26,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Bảng Bình luận với các thông tin về bình luận </h3>
+                    <h3 class="card-title">Bảng Bình luận </h3>
                 </div>
                 <div class="card-body">
                     <table id="comment" class="table table-bordered table-hover">
