@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('slides', function (Blueprint $table) {
-            $table->increments('slide_id');
-            $table->string('image',255);
+        Schema::create('sliders', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('slider_image', 255);
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')
-                ->references('product_id')->on('products');
-           
+                ->references('id')->on('products');
+            $table->tinyInteger('numerical_order');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('slides');
+        Schema::dropIfExists('sliders');
     }
 };

@@ -9,16 +9,6 @@
                 <div class="text-center">
                     <h3 class="h3 fw-bold mb-0" style="color: #ff6219;">Đăng ký tài khoản</h3>
                 </div>
-                <!-- @if($errors->any())
-                <div style="background-color: red; color: #F5F5F5;">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                        <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif -->
-                <!-- neu thanh cong, khong co loi  -->
                 @if(Session::has('thongbao'))
                 <p style="color: red;">{{Session::get('thongbao')}}</p>
                 @endif

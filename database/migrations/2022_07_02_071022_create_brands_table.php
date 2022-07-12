@@ -15,9 +15,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('brands', function (Blueprint $table) {
-            $table->increments('brand_id');
+            $table->increments('id');
             $table->string('brand_name',100);
-            $table->string('brand_logo',255)->nullable();
+            // $table->string('brand_logo',255)->nullable();
+            $table->timestamps();
            
         });
 

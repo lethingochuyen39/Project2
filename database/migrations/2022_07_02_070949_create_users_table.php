@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('email', 100)->unique();
             $table->string('password', 60);
             $table->tinyInteger('role');
-            $table->string('remember_token', 100)->nullable();
+            // $table->string('remember_token', 100)->nullable();
         });
 
         DB::table('users')->insert(

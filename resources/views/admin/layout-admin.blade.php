@@ -21,7 +21,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -57,7 +57,7 @@
             </ul>
         </nav>
         <!-- /.navbar -->
-        
+
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -99,7 +99,126 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
 
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Sản phẩm
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/product/index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách sản phẩm</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/product/create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm sản phẩm</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Loại sản phẩm
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/product_type/index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách loại sản phẩm</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/product_type/create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm loại sản phẩm</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Thương hiệu
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/brand/index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách thương hiệu</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/brand/create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm thương hiệu</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Khuyến mãi
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/promotion/index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách khuyến mãi</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/promotion/create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm khuyến mãi</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Slider
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/slider/index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách Slider</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/slider/create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm Slider</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
@@ -135,52 +254,52 @@
                         </li>
 
                         <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Admin
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ url('admin/users/index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách admin</p>
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Admin
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/users/index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách admin</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/users/create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm admin</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ url('admin/users/create') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm admin</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Tin tức
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ url('admin/news/index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách tin tức</p>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Tin tức
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/news/index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách tin tức</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/news/create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm tin tức</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ url('admin/news/create') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm tin tức</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

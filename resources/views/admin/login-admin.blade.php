@@ -56,12 +56,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-7">
-                                    <div class="icheck-primary">
+                                    <!-- <div class="icheck-primary">
                                         <input type="checkbox" name="remember" id="remember">
                                         <label for="remember">
                                             Nhớ tôi
                                         </label>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col-5">
                                     <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>

@@ -15,25 +15,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->increments('product_id');
+            $table->increments('id');
             $table->string('product_name', 170);
-            $table->float('product_price');
+            $table->integer('product_price');
             $table->boolean('product_highlight')->default(0);
             $table->timestamp('product_date')->useCurrent();
-            $table->string('product_description', 1000)->nullable();
+            $table->text('product_description', 1000)->nullable();
             $table->string('product_image', 255)->nullable();
             $table->integer('product_type_id')->unsigned();
             $table->foreign('product_type_id')
-                ->references('product_type_id')->on('product_type');
-                // ->onDelete('cascade');
+                ->references('id')->on('product_types');
             $table->integer('brand_id')->unsigned();
             $table->foreign('brand_id')
-                ->references('brand_id')->on('brands');
-                // ->onDelete('cascade');
-            // $table->integer('product_type_id')->unsigned()->foreign('product_type_id')->references('product_type_id')->on('product_type');
-
-
-            // $table->integer('brand_id')->unsigned()->foreign('brand_id')->references('brand_id')->on('brands');
+                ->references('id')->on('brands');
+            $table->timestamps();
         });
 
         DB::table('products')->insert(

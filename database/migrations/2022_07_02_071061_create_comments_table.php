@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('comment_username', 100);
             $table->string('comment_reply', 500)->nullable();
             $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('product_id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->integer('customer_id')->unsigned();
             $table->foreign('customer_id')->references('customer_id')->on('customers');
         });

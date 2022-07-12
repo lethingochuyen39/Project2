@@ -12,19 +12,20 @@ class Brand extends Model
      // khai báo table ứng với model
      protected $table = "brands";
      // khai báo trường khóa chính
-     protected $primaryKey = 'brand_id';
+     protected $primaryKey = 'id';
      protected $guarded =[];
      public $timestamps = false;
      // mặc định khóa chính sẽ tự động tăng
      public $incrementing = true; // false: khóa chỉnh sẽ không tự động tăng
      protected $fillable = [
-         'brand_id',
+         'id',
          'brand_name',
-         'brand_logo'
+         'created_at','updated_at'
+        //  'brand_logo'
     
      ];
 
      public function products(){
-        return $this->hasMany(related: Product::class, foreignKey:'brand_id', localKey:'brand_id');
+        return $this->hasMany(related: Product::class, foreignKey:'brand_id', localKey:'id');
      }
 }

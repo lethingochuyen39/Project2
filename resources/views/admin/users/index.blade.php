@@ -1,5 +1,5 @@
 @extends('admin.layout-admin')
-@section('title', 'users index')
+@section('title', 'Danh sách admin')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -69,9 +69,17 @@
                                         <i class="fas fa-folder"></i>Sửa
                                     </a>
 
+                                    @if($p->role ==0 )
+                                    <a class="btn btn-danger btn-sm disabled" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ Route('admin.users.delete',$p->id) }}">
+                                        <i class="fas fa-trash"></i>Xóa
+                                    </a>
+                                    @else
                                     <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ Route('admin.users.delete',$p->id) }}">
                                         <i class="fas fa-trash"></i>Xóa
                                     </a>
+                                    @endif
+
+
 
                                 </td>
                             </tr>

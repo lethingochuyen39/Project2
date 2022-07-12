@@ -27,7 +27,7 @@ class OrderDetail extends Model
       ];
 
       public function products(){
-        return $this->belongsTo(related: Product::class, foreignKey: 'product_id', ownerKey: 'product_id');
+        return $this->belongsTo(related: Product::class, foreignKey: 'product_id', ownerKey: 'id');
      }
 
      public function orders(){

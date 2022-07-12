@@ -14,26 +14,27 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_type', function (Blueprint $table) {
-            $table->increments('product_type_id');
+        Schema::create('product_types', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('product_type_name', 100);
+            $table->timestamps();
         });
-        DB::table('product_type')->insert(
+        DB::table('product_types')->insert(
             [
                 'product_type_name' => 'giày cỏ nhân tạo'
             ]
         );
-        DB::table('product_type')->insert(
+        DB::table('product_types')->insert(
             [
                 'product_type_name' => 'giày cỏ tự nhiên'
             ]
         );
-        DB::table('product_type')->insert(
+        DB::table('product_types')->insert(
             [
                 'product_type_name' => 'giày futsal'
             ]
         );
-        DB::table('product_type')->insert(
+        DB::table('product_types')->insert(
             [
                 'product_type_name' => 'phụ kiện'
             ]
@@ -47,6 +48,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_type');
+        Schema::dropIfExists('product_types');
     }
 };

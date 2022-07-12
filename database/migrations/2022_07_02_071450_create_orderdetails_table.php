@@ -23,7 +23,7 @@ return new class extends Migration
                 ->references('order_id')->on('orders');
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')
-                ->references('product_id')->on('products');
+                ->references('id')->on('products');
           
         
         });

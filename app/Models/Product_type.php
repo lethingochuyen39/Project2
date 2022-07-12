@@ -10,20 +10,20 @@ class Product_type extends Model
     use HasFactory;
 
       // khai báo table ứng với model
-      protected $table = "product_type";
+      protected $table = "product_types";
       // khai báo trường khóa chính
-      protected $primaryKey = 'product_type_id';
+      protected $primaryKey = 'id';
       protected $guarded =[];
       public $timestamps = false;
       // mặc định khóa chính sẽ tự động tăng
       public $incrementing = true; // false: khóa chỉnh sẽ không tự động tăng
       protected $fillable = [
-          'product_type_id',
+          'id',
           'product_type_name'
-         
+          ,'created_at','updated_at'
       ];
       
       public function products(){
-        return $this->hasMany( related: Product::class, foreignKey:'product_type_id', localKey: 'product_type_id');
+        return $this->hasMany( related: Product::class, foreignKey:'product_type_id', localKey: 'id');
      }
 }

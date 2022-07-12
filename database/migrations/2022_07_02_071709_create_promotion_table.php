@@ -13,21 +13,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('promotion', function (Blueprint $table) {
+        Schema::create('promotions', function (Blueprint $table) {
             $table->increments('promotion_id');
             $table->string('promotion_name', 255);
-            $table->boolean('promotion_type');
-            $table->boolean('infinite_promotion');
-            $table->timestamp('promotion_start_time')->useCurrent();
-            $table->timestamp('promotion_end_time')->nullable();
+            $table->tinyInteger('promotion_type');
+            // $table->boolean('infinite_promotion');
+            $table->timestamp('promotion_time_start')->useCurrent();
+            $table->timestamp('promotion_time_end')->nullable();
             $table->integer('promotion_value')->unsigned()->nullable();
+
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')
-                ->references('product_id')->on('products');
+                ->references('id')->on('products');
 
             $table->integer('product_type_id')->unsigned()->nullable();
             $table->foreign('product_type_id')
-                ->references('product_type_id')->on('product_type');
+                ->references('id')->on('product_types');
+                $table->timestamps();
         });
     }
 
@@ -38,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('promotion');
+        Schema::dropIfExists('promotions');
     }
 };
