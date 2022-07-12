@@ -84,7 +84,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="nav-icon fab fa-creative-commons-by"></i>
                                 <p>
                                     Khách hàng
                                     <i class="fas fa-angle-left right"></i>
@@ -103,7 +103,7 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Sản phẩm
                                     <i class="right fas fa-angle-left"></i>
@@ -128,7 +128,7 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fab fa-empire"></i>
                                 <p>
                                     Loại sản phẩm
                                     <i class="right fas fa-angle-left"></i>
@@ -152,7 +152,7 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fab fa-codepen"></i>
                                 <p>
                                     Thương hiệu
                                     <i class="right fas fa-angle-left"></i>
@@ -175,7 +175,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fab fa-medapps"></i>
                                 <p>
                                     Khuyến mãi
                                     <i class="right fas fa-angle-left"></i>
@@ -198,7 +198,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fab fa-hornbill"></i>
                                 <p>
                                     Slider
                                     <i class="right fas fa-angle-left"></i>
@@ -237,7 +237,7 @@
                             </ul>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                            <i class="nav-icon fas fa-bell"></i>
                                 <p>
                                     Phản hồi Website
                                     <i class="fas fa-angle-left right"></i>
@@ -250,6 +250,70 @@
                                         <p>Danh sách phản hồi</p>
                                     </a>
                                 </li>
+                            </ul>
+                        </li>
+
+                        
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fab fa-readme"></i>
+                                <p>
+                                    Tin tức
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/news/index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách tin tức</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('admin/news/create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Thêm tin tức</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fab fa-stack-exchange"></i>
+                                <p>
+                                    Đơn hàng
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách đơn hàng</p>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">	
+                                <i class="nav-icon fab fa-nutritionix"></i>
+                                <p>
+                                    Doanh thu
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Danh sách doanh thu</p>
+                                    </a>
+                                </li>
+                               
                             </ul>
                         </li>
 
@@ -272,30 +336,6 @@
                                     <a href="{{ url('admin/users/create') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Thêm admin</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Tin tức
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ url('admin/news/index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Danh sách tin tức</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('admin/news/create') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Thêm tin tức</p>
                                     </a>
                                 </li>
                             </ul>

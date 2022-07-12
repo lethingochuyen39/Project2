@@ -67,7 +67,7 @@
                             @elseif ( $p->product_highlight == 0 )
                             <div class="form-group">
                                 <label for="txt-hightlight">Sản phẩm nổi bật</label>
-                                <input type="checkbox" class="form- control" id="txt-hightlight" name="product_hightlight" value="1" >
+                                <input type="checkbox" class="form- control" id="txt-hightlight" name="product_hightlight" value="0" >
                             </div>
                             @endif
                             <div class="form-group">

@@ -38,18 +38,34 @@ class NewsController extends Controller
     public function postUpdate(NewsRequest $request, $news_id)
     {
         $news = $request->all();
+
+        
         if ($request->hasFile('news_image')) {
             $file = $request->file('news_image');
+            $extension = $file->getClientOriginalExtension();
+            if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
+                return redirect()->route('admin.news.update')->with('thongbao', 'Bạn chỉ được chọn file có đuôi jpg,png,jpeg');
+            }
             $imageName = $file->getClientOriginalName();
-            $file->move('news_images', $imageName);
+            $file->move('images', $imageName);
         } else {
             $p = News::find($news_id);
-            $imageName = $p->image;
+            $imageName = $p->news_image;
         }
+
+        // if ($request->hasFile('news_image')) {
+        //     $file = $request->file('news_image');
+        //     $imageName = $file->getClientOriginalName();
+        //     $file->move('news_images', $imageName);
+        // } else {
+        //     $p = News::find($news_id);
+        //     $imageName = $p->image;
+        // }
         $p = News::find($news_id);
         $p->news_date = $news['news_date'];
         $p->news_topic = $news['news_topic'];
         $p->news_content = $news['news_content'];
+        $p->news_image = $news['news_image'];
         $p->save();
         return redirect()->route('admin.news.index');
     }

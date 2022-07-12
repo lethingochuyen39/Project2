@@ -37,7 +37,7 @@ Thêm tin tức
                                 <small>@if($errors->has('news_content'))
                                 <br><strong class="text-danger">{{ $errors->first('news_content') }}</strong>
                                 @endif</small>
-                                <textarea class="form-control" rows="3" name="news_content" placeholder="Nhập nội dung"></textarea>
+                                <textarea class="form-control" rows="3" name="news_content" placeholder="Nhập nội dung..."></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="image">Ảnh</label>
