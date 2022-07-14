@@ -27,120 +27,107 @@ Route::get('/', function () {
 
 
 /*(-------ADMIN--------)*/
+// Huyen
 // dang nhap admin
 Route::get('admin/login-admin',[AdminController::class,'login'])->name('admin.login');
-
 Route::post('admin/post-login',[AdminController::class,'postLogin'])->name('admin.postLogin');
-
-Route::get('admin/dashboard-admin',[AdminController::class,'dashboard'])->name('admin.dashboard');
-
-Route::get('logout-admin',[AdminController::class,'logout'])->name('admin.logout');
-
-Route::get('admin/dashboard1-admin',[AdminController::class,'dashboard1'])->name('admin.dashboard1');
-
-Route::get('admin/dashboard2-admin',[AdminController::class,'dashboard2'])->name('admin.dashboard2');
+Route::get('admin/dashboard-admin',[AdminController::class,'dashboard'])->name('admin.dashboard')->middleware('checklogin3::class');
+Route::get('logout-admin',[AdminController::class,'logout'])->name('admin.logout')->middleware('checklogin::class');
+Route::get('admin/dashboard1-admin',[AdminController::class,'dashboard1'])->name('admin.dashboard1')->middleware('checklogin13::class');
+Route::get('admin/dashboard2-admin',[AdminController::class,'dashboard2'])->name('admin.dashboard2')->middleware('checklogin23::class');
 
 // khach hàng
-Route::get('admin/customer',[AdminController::class,'customer'])->name('admin.customer');
-
-Route::get('admin/{id}/show-customer',[AdminController::class,'showCustomer'])->name('admin.showCustomer');
-
-Route::get('admin/{id}/edit-customer',[AdminController::class,'editCustomer'])->name('admin.editCustomer');
-
-Route::post('admin/{id}/post-edit-customer',[AdminController::class,'postEditCustomer'])->name('admin.postEditCustomer');
-
-Route::get('admin/{id}/delete-customer',[AdminController::class,'deleteCustomer'])->name('admin.deleteCustomer');
+Route::get('admin/customer',[AdminController::class,'customer'])->name('admin.customer')->middleware('checklogin23::class');
+Route::get('admin/{id}/show-customer',[AdminController::class,'showCustomer'])->name('admin.showCustomer')->middleware('checklogin23::class');
+Route::get('admin/{id}/edit-customer',[AdminController::class,'editCustomer'])->name('admin.editCustomer')->middleware('checklogin23::class');
+Route::post('admin/{id}/post-edit-customer',[AdminController::class,'postEditCustomer'])->name('admin.postEditCustomer')->middleware('checklogin23::class');
+Route::get('admin/{id}/delete-customer',[AdminController::class,'deleteCustomer'])->name('admin.deleteCustomer')->middleware('checklogin23::class');
 
 // bình luận
-Route::get('admin/comment',[AdminController::class,'comment'])->name('admin.comment');
-
-Route::get('admin/{id}/reply-comment',[AdminController::class,'replyComment'])->name('admin.replyComment');
-
-Route::post('admin/{id}/post-reply-comment',[AdminController::class,'postReplyComment'])->name('admin.postReplyComment');
-
-Route::get('admin/{id}/delete-comment',[AdminController::class,'deleteComment'])->name('admin.deleteComment');
+Route::get('admin/comment',[AdminController::class,'comment'])->name('admin.comment')->middleware('checklogin13::class');
+Route::get('admin/{id}/reply-comment',[AdminController::class,'replyComment'])->name('admin.replyComment')->middleware('checklogin13::class');
+Route::post('admin/{id}/post-reply-comment',[AdminController::class,'postReplyComment'])->name('admin.postReplyComment')->middleware('checklogin13::class');
+Route::get('admin/{id}/delete-comment',[AdminController::class,'deleteComment'])->name('admin.deleteComment')->middleware('checklogin13::class');
 
 
 // phản hồi
-Route::get('admin/feedback',[AdminController::class,'feedback'])->name('admin.feedback');
-
-Route::get('admin/{id}/show-feedback',[AdminController::class,'showFeedback'])->name('admin.showFeedback');
-
-Route::get('admin/{id}/delete-feedback',[AdminController::class,'deleteFeedback'])->name('admin.deleteFeedback');
+Route::get('admin/feedback',[AdminController::class,'feedback'])->name('admin.feedback')->middleware('checklogin23::class');
+Route::get('admin/{id}/show-feedback',[AdminController::class,'showFeedback'])->name('admin.showFeedback')->middleware('checklogin23::class');
+Route::get('admin/{id}/delete-feedback',[AdminController::class,'deleteFeedback'])->name('admin.deleteFeedback')->middleware('checklogin23::class');
 
 // Quân
 //news
-Route::get('admin/news/index', [NewsController::class, 'index'])->name('admin.news.index');
-Route::get('admin/news/create', [NewsController::class, 'create'])->name('admin.news.create');
-Route::post('admin/news/postCreate', [NewsController::class, 'postCreate'])->name('admin.news.postCreate');
-Route::get('admin/news/{news_id}/update', [NewsController::class, 'update'])->name('admin.news.update');
-Route::post('admin/news/{news_id}/postUpdate', [NewsController::class, 'postUpdate'])->name('admin.news.postUpdate');
-Route::get('admin/news/{news_id}/delete', [NewsController::class, 'delete'])->name('admin.news.delete');
-Route::get('admin/news/{news_id}/details', [NewsController::class, 'details'])->name('admin.news.details');
+Route::get('admin/news/index', [NewsController::class, 'index'])->name('admin.news.index')->middleware('checklogin23::class');
+Route::get('admin/news/create', [NewsController::class, 'create'])->name('admin.news.create')->middleware('checklogin23::class');
+Route::post('admin/news/postCreate', [NewsController::class, 'postCreate'])->name('admin.news.postCreate')->middleware('checklogin23::class');
+Route::get('admin/news/{news_id}/update', [NewsController::class, 'update'])->name('admin.news.update')->middleware('checklogin23::class');
+Route::post('admin/news/{news_id}/postUpdate', [NewsController::class, 'postUpdate'])->name('admin.news.postUpdate')->middleware('checklogin23::class');
+Route::get('admin/news/{news_id}/delete', [NewsController::class, 'delete'])->name('admin.news.delete')->middleware('checklogin23::class');
+Route::get('admin/news/{news_id}/details', [NewsController::class, 'details'])->name('admin.news.details')->middleware('checklogin23::class');
 
 //them sửa xóa admin
-Route::get('admin/users/index', [UsersController::class, 'index'])->name('admin.users.index');
-Route::get('admin/users/create', [UsersController::class, 'create'])->name('admin.users.create');
-Route::post('admin/users/postCreate', [UsersController::class, 'postCreate'])->name('admin.users.postCreate');
-Route::get('admin/users/{id}/update', [UsersController::class, 'update'])->name('admin.users.update');
-Route::post('admin/users/{id}/postUpdate', [UsersController::class, 'postUpdate'])->name('admin.users.postUpdate');
-Route::get('admin/users/{id}/delete', [UsersController::class, 'delete'])->name('admin.users.delete');
-Route::get('admin/users/{id}/details', [UsersController::class, 'details'])->name('admin.users.details');
+Route::get('admin/users/index', [UsersController::class, 'index'])->name('admin.users.index')->middleware('checklogin3::class');
+Route::get('admin/users/create', [UsersController::class, 'create'])->name('admin.users.create')->middleware('checklogin3::class');
+Route::post('admin/users/postCreate', [UsersController::class, 'postCreate'])->name('admin.users.postCreate')->middleware('checklogin3::class');
+Route::get('admin/users/{id}/update', [UsersController::class, 'update'])->name('admin.users.update')->middleware('checklogin3::class');
+Route::post('admin/users/{id}/postUpdate', [UsersController::class, 'postUpdate'])->name('admin.users.postUpdate')->middleware('checklogin3::class');
+Route::get('admin/users/{id}/delete', [UsersController::class, 'delete'])->name('admin.users.delete')->middleware('checklogin3::class');
+Route::get('admin/users/{id}/details', [UsersController::class, 'details'])->name('admin.users.details')->middleware('checklogin3::class');
 
 
 // Long
 //product
-Route::get('admin/product/index',[ProductController::class,'index'])->name('product.index');
-Route::get('admin/product/create',[ProductController::class,'create'])->name('product.create');
-Route::post('admin/product/postCreate',[ProductController::class,'postCreate'])->name('product.postCreate');
-Route::get('admin/product/{id}/update}',[ProductController::class,'update'])->name('product.update');
-Route::post('admin/product/{id}/postUpdate',[ProductController::class,'postUpdate'])->name('product.postUpdate');
-Route::get('admin/product/{id}/delete',[ProductController::class,'delete'])->name('product.delete');
-Route::get('admin/product/{id}/details',[ProductController::class,'details'])->name('product.details');
+Route::get('admin/product/index',[ProductController::class,'index'])->name('product.index')->middleware('checklogin13::class');
+Route::get('admin/product/create',[ProductController::class,'create'])->name('product.create')->middleware('checklogin13::class');
+Route::post('admin/product/postCreate',[ProductController::class,'postCreate'])->name('product.postCreate')->middleware('checklogin13::class');
+Route::get('admin/product/{id}/update}',[ProductController::class,'update'])->name('product.update')->middleware('checklogin13::class');
+Route::post('admin/product/{id}/postUpdate',[ProductController::class,'postUpdate'])->name('product.postUpdate')->middleware('checklogin13::class');
+Route::get('admin/product/{id}/delete',[ProductController::class,'delete'])->name('product.delete')->middleware('checklogin13::class');
+Route::get('admin/product/{id}/details',[ProductController::class,'details'])->name('product.details')->middleware('checklogin13::class');
 //brand
-Route::get('admin/brand/index',[BrandController::class,'index'])->name('brand.index');
-Route::get('admin/brand/create',[BrandController::class,'create'])->name('brand.create');
-Route::post('admin/brand/postCreate',[BrandController::class,'postCreate'])->name('brand.postCreate');
-Route::get('admin/brand/{id}/update}',[BrandController::class,'update'])->name('brand.update');
-Route::post('admin/brand/{id}/postUpdate',[BrandController::class,'postUpdate'])->name('brand.postUpdate');
-Route::get('admin/brand/{id}/delete',[BrandController::class,'delete'])->name('brand.delete');
+Route::get('admin/brand/index',[BrandController::class,'index'])->name('brand.index')->middleware('checklogin13::class');
+Route::get('admin/brand/create',[BrandController::class,'create'])->name('brand.create')->middleware('checklogin13::class');
+Route::post('admin/brand/postCreate',[BrandController::class,'postCreate'])->name('brand.postCreate')->middleware('checklogin13::class');
+Route::get('admin/brand/{id}/update}',[BrandController::class,'update'])->name('brand.update')->middleware('checklogin13::class');
+Route::post('admin/brand/{id}/postUpdate',[BrandController::class,'postUpdate'])->name('brand.postUpdate')->middleware('checklogin13::class');
+Route::get('admin/brand/{id}/delete',[BrandController::class,'delete'])->name('brand.delete')->middleware('checklogin13::class');
 //productType
-Route::get('admin/product_type/index',[ProductTypeController::class,'index'])->name('productType.index');
-Route::get('admin/product_type/create',[ProductTypeController::class,'create'])->name('productType.create');
-Route::post('admin/product_type/postCreate',[ProductTypeController::class,'postCreate'])->name('productType.postCreate');
-Route::get('admin/product_type/{id}/update}',[ProductTypeController::class,'update'])->name('productType.update');
-Route::post('admin/product_type/{id}/postUpdate',[ProductTypeController::class,'postUpdate'])->name('productType.postUpdate');
-Route::get('admin/product_type/{id}/delete',[ProductTypeController::class,'delete'])->name('productType.delete');
+Route::get('admin/product_type/index',[ProductTypeController::class,'index'])->name('productType.index')->middleware('checklogin13::class');
+Route::get('admin/product_type/create',[ProductTypeController::class,'create'])->name('productType.create')->middleware('checklogin13::class');
+Route::post('admin/product_type/postCreate',[ProductTypeController::class,'postCreate'])->name('productType.postCreate')->middleware('checklogin13::class');
+Route::get('admin/product_type/{id}/update}',[ProductTypeController::class,'update'])->name('productType.update')->middleware('checklogin13::class');
+Route::post('admin/product_type/{id}/postUpdate',[ProductTypeController::class,'postUpdate'])->name('productType.postUpdate')->middleware('checklogin13::class');
+Route::get('admin/product_type/{id}/delete',[ProductTypeController::class,'delete'])->name('productType.delete')->middleware('checklogin13::class');
 // slider
-Route::get('admin/slider/index',[SliderController::class,'index'])->name('slider.index');
-Route::get('admin/slider/create',[SliderController::class,'create'])->name('slider.create');
-Route::post('admin/slider/postCreate',[SliderController::class,'postCreate'])->name('slider.postCreate');
-Route::get('admin/slider/{id}/update}',[SliderController::class,'update'])->name('slider.update');
-Route::post('admin/slider/{id}/postUpdate',[SliderController::class,'postUpdate'])->name('slider.postUpdate');
-Route::get('admin/slider/{id}/delete',[SliderController::class,'delete'])->name('slider.delete');
+Route::get('admin/slider/index',[SliderController::class,'index'])->name('slider.index')->middleware('checklogin13::class');
+Route::get('admin/slider/create',[SliderController::class,'create'])->name('slider.create')->middleware('checklogin13::class');
+Route::post('admin/slider/postCreate',[SliderController::class,'postCreate'])->name('slider.postCreate')->middleware('checklogin13::class');
+Route::get('admin/slider/{id}/update}',[SliderController::class,'update'])->name('slider.update')->middleware('checklogin13::class');
+Route::post('admin/slider/{id}/postUpdate',[SliderController::class,'postUpdate'])->name('slider.postUpdate')->middleware('checklogin13::class');
+Route::get('admin/slider/{id}/delete',[SliderController::class,'delete'])->name('slider.delete')->middleware('checklogin13::class');
 //promotion
-Route::get('admin/promotion/index',[PromotionController::class,'index'])->name('promotion.index');
-Route::get('admin/promotion/create',[PromotionController::class,'create'])->name('promotion.create');
-Route::post('admin/promotion/postCreate',[PromotionController::class,'postCreate'])->name('promotion.postCreate');
-Route::get('admin/promotion/{id}/update}',[PromotionController::class,'update'])->name('promotion.update');
-Route::post('admin/promotion/{id}/postUpdate',[PromotionController::class,'postUpdate'])->name('promotion.postUpdate');
-Route::get('admin/promotion/{id}/delete',[PromotionController::class,'delete'])->name('promotion.delete');
-Route::get('admin/promotion/{id}/details',[PromotionController::class,'details'])->name('promotion.details');
+Route::get('admin/promotion/index',[PromotionController::class,'index'])->name('promotion.index')->middleware('checklogin13::class');
+Route::get('admin/promotion/create',[PromotionController::class,'create'])->name('promotion.create')->middleware('checklogin13::class');
+Route::post('admin/promotion/postCreate',[PromotionController::class,'postCreate'])->name('promotion.postCreate')->middleware('checklogin13::class');
+Route::get('admin/promotion/{id}/update}',[PromotionController::class,'update'])->name('promotion.update')->middleware('checklogin13::class');
+Route::post('admin/promotion/{id}/postUpdate',[PromotionController::class,'postUpdate'])->name('promotion.postUpdate')->middleware('checklogin13::class');
+Route::get('admin/promotion/{id}/delete',[PromotionController::class,'delete'])->name('promotion.delete')->middleware('checklogin13::class');
+Route::get('admin/promotion/{id}/details',[PromotionController::class,'details'])->name('promotion.details')->middleware('checklogin13::class');
 
 //Tuan
 //order
-Route::get('admin/orders/index', [OrdersController::class, 'index'])->name('orders.index');
-Route::get('admin/orders/{orders_id}/update', [OrdersController::class, 'update'])->name('orders.update');
-Route::post('admin/orders/{orders_id}/postUpdate', [OrdersController::class, 'postUpdate'])->name('orders.postUpdate');
-Route::get('admin/orders/{orders_id}/delete', [OrdersController::class, 'delete'])->name('orders.delete');
-Route::get('admin/orders/{orders_id}/details', [OrdersController::class, 'details'])->name('orders.details');
+Route::get('admin/orders/index', [OrdersController::class, 'index'])->name('orders.index')->middleware('checklogin23::class');
+Route::get('admin/orders/{orders_id}/update', [OrdersController::class, 'update'])->name('orders.update')->middleware('checklogin23::class');
+Route::post('admin/orders/{orders_id}/postUpdate', [OrdersController::class, 'postUpdate'])->name('orders.postUpdate')->middleware('checklogin23::class');
+Route::get('admin/orders/{orders_id}/delete', [OrdersController::class, 'delete'])->name('orders.delete')->middleware('checklogin23::class');
+Route::get('admin/orders/{orders_id}/details', [OrdersController::class, 'details'])->name('orders.details')->middleware('checklogin23::class');
 
 //orderDetails
-Route::get('admin/orderdetails/index', [OrderDetailsController::class, 'index'])->name('orderdetails.index');
-Route::get('admin/orderdetails/{orderDetail_id}/update', [OrderDetailsController::class, 'update'])->name('orderdetails.update');
-Route::post('admin/orderdetails/{orderDetail_id}/postUpdate', [OrderDetailsController::class, 'postUpdate'])->name('orderdetails.postUpdate');
-Route::get('admin/orderdetails/{orderDetail_id}/delete', [OrderDetailsController::class, 'delete'])->name('orderdetails.delete');
-Route::get('admin/orderdetails/{orderDetail_id}/details', [OrderDetailsController::class, 'details'])->name('orderdetails.details');
+Route::get('admin/orderdetails/index', [OrderDetailsController::class, 'index'])->name('orderdetails.index')->middleware('checklogin23::class');
+Route::get('admin/orderdetails/{orderDetail_id}/update', [OrderDetailsController::class, 'update'])->name('orderdetails.update')->middleware('checklogin23::class');
+Route::post('admin/orderdetails/{orderDetail_id}/postUpdate', [OrderDetailsController::class, 'postUpdate'])->name('orderdetails.postUpdate')->middleware('checklogin23::class');
+Route::get('admin/orderdetails/{orderDetail_id}/delete', [OrderDetailsController::class, 'delete'])->name('orderdetails.delete')->middleware('checklogin23::class');
+Route::get('admin/orderdetails/{orderDetail_id}/details', [OrderDetailsController::class, 'details'])->name('orderdetails.details')->middleware('checklogin23::class');
 
 /*(-------ADMIN END--------)*/
 
@@ -151,25 +138,16 @@ Route::get('admin/orderdetails/{orderDetail_id}/details', [OrderDetailsControlle
 /*(-------USER--------)*/
 // custome (trang chủ), đăng ký , đăng nhập, thông tin
 Route::get('user/pages/home',[CustomerController::class,'home'])->name('customer.home');
-
 Route::get('user/register-user',[CustomerController::class,'register'])->name('customer.register');
-
 Route::post('user/add',[CustomerController::class,'add'])->name('customer.add');
-
 Route::get('user/logout',[CustomerController::class,'logout'])->name('customer.logout');
-
 Route::get('user/login-user',[CustomerController::class,'login'])->name('customer.login');
-
 Route::post('user/postlogin-user',[CustomerController::class,'postlogin'])->name('customer.postlogin');
-
 Route::get('user/info-account',[CustomerController::class,'account'])->name('customer.account');
-
 Route::post('user/update-user',[CustomerController::class,'update'])->name('customer.update');
-
 
 // contact
 Route::get('user/pages/contact',[CustomerController::class,'contact'])->name('customer.contact');
-
 Route::post('user/post-Contact',[CustomerController::class,'postContact'])->name('customer.postContact');
 
 

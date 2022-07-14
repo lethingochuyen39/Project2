@@ -6,25 +6,14 @@ use App\Models\Comment;
 use App\Models\Customer;
 use App\Models\Feedback;
 use App\Http\Requests\AdminLoginRequest;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
-{
-
-    // public function AuthLogin(){
-    //    if(Auth::check()){
-    //    Auth::user()->id ==
-    //     return redirect()->route('admin.postLogin');
-      
-    //    }else{
-       
-    //     return redirect()->route('admin.login');
-    //    }
-    
-    // }
+{	
 
     public function login()
     {
@@ -40,15 +29,13 @@ class AdminController extends Controller
         ];
         // ghi nhớ đăng nhập
         // $remember  = $request->has('remember');$remember
-        
+
         if (Auth::attempt($arr)) {
             if (Auth::user()->role == 3) {
                 return redirect()->route('admin.dashboard');
-            }
-            elseif (Auth::user()->role == 1) {
+            } elseif (Auth::user()->role == 1) {
                 return redirect()->route('admin.dashboard1');
-            }
-            elseif (Auth::user()->role == 2) {
+            } elseif (Auth::user()->role == 2) {
 
                 return redirect()->route('admin.dashboard2');
             }
@@ -57,24 +44,21 @@ class AdminController extends Controller
         }
     }
 
-// trang chủ quản lý
+    // trang chủ quản lý
     public function dashboard()
     {
-        // $this->AuthLogin();
         return view('admin.dashboard-admin');
     }
 
     // trang chủ quản lý sản phẩm
     public function dashboard1()
     {
-        // $this->AuthLogin();
         return view('admin.dashboard1-admin');
     }
 
     // trang chủ quản lý khách hàng
     public function dashboard2()
     {
-        // $this->AuthLogin();
         return view('admin.dashboard2-admin');
     }
 
@@ -171,7 +155,7 @@ class AdminController extends Controller
         $p->delete();
         return redirect()->route('admin.feedback');
     }
-    
+
 
     // 
 }
