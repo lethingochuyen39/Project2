@@ -40,19 +40,25 @@
                             <div class="form-group">
                                 <label for="txt-price">Nội dung bình luận</label> <br>
                                 <textarea name="comment_reply" id="" cols="57" rows="1" readonly>{{ $p->comment_content }}</textarea>
-                                <div class="form-group">
-                                    <label for="txt-price">Nội dung trả lời</label> <br>
-                                    <textarea name="comment_reply" id="" cols="57" rows="5">{{ $p->comment_reply }}</textarea>
-                                </div>
-                                
-
                             </div>
 
-                            <!-- /.card-body -->
-                            <div class="col-3 mx-auto " style="margin-bottom: 30px;">
-                                <button type="submit" class="btn btn-primary btn-block">Trả lời</button>
-                                <button type="reset" class="btn btn-danger btn-block ">Hủy</button>
+                            <div class="form-group">
+
+                                <label for="txt-price">Nội dung trả lời</label>
+                                <small>@if($errors->has('comment_reply'))
+                                    <br> <strong class="text-danger">{{ $errors->first('comment_reply') }}</strong>
+                                    @endif</small>
+                                <textarea name="comment_reply" id="" cols="57" rows="5">{{ $p->comment_reply }}</textarea>
                             </div>
+
+
+                        </div>
+
+                        <!-- /.card-body -->
+                        <div class="col-3 mx-auto " style="margin-bottom: 30px;">
+                            <button type="submit" class="btn btn-primary btn-block">Trả lời</button>
+                            <button type="reset" class="btn btn-danger btn-block ">Hủy</button>
+                        </div>
 
 
                     </form>

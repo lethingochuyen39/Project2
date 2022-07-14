@@ -17,12 +17,12 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('customer_id');
             $table->string('customer_name', 100);
-            $table->integer('customer_telephone');
+            $table->integer('customer_telephone')->unsigned();
             $table->string('customer_email', 100)->unique();
             $table->string('customer_address', 255)->nullable();
             $table->string('customer_image', 255)->nullable();
             $table->string('customer_password', 60);
-            $table->boolean('customer_status')->default(1);
+            $table->tinyInteger('customer_status')->default(1);
         });
 
         DB::table('customers')->insert(

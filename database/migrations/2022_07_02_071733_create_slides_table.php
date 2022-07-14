@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('sliders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slider_image', 255);
+            $table->tinyInteger('numerical_order');
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')
                 ->references('id')->on('products');
-            $table->tinyInteger('numerical_order');
-            $table->timestamps();
+            
         });
     }
 

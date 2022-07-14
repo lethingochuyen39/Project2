@@ -1,6 +1,6 @@
 @extends('admin.layout-admin')
 <!-- thay bang tieu de -->
-@section('title', 'chỉnh sửa khách hàng')
+@section('title', 'Cập nhật khách hàng')
 @section('content')
 <section class="content">
     <div class="container-fluid">

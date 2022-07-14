@@ -6,11 +6,10 @@ use App\Models\Comment;
 use App\Models\Customer;
 use App\Models\Feedback;
 use App\Http\Requests\AdminLoginRequest;
-
+use App\Http\Requests\ReplyCommentRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
+
 
 class AdminController extends Controller
 {	
@@ -119,7 +118,7 @@ class AdminController extends Controller
         return view('admin.reply-comment', ['p' => $p]);
     }
 
-    public function postReplyComment(Request $request, $comment_id)
+    public function postReplyComment(ReplyCommentRequest $request, $comment_id)
     {
         $comment_reply = $request->comment_reply;
 
