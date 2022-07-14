@@ -1,4 +1,4 @@
-@extends('admin.layout-admin1')
+@extends('admin.layout-admin')
 <!-- thay bang tieu de -->
 @section('title', 'Quản lý sản phẩm')
 @section('content')

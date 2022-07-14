@@ -17,9 +17,9 @@ return new class extends Migration
             $table->increments('promotion_id');
             $table->string('promotion_name', 255);
             $table->tinyInteger('promotion_type');
-            $table->timestamp('promotion_time_start')->useCurrent();
-            $table->timestamp('promotion_time_end');
-            $table->integer('promotion_value')->unsigned();
+            $table->dateTime('promotion_time_start');
+            $table->dateTime('promotion_time_end');
+            $table->integer('promotion_value');
 
             $table->integer('product_id')->unsigned()->nullable();
             $table->foreign('product_id')

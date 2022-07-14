@@ -47,7 +47,7 @@
                                     @endif</small>
                                 <?php
                                 
-                                    if ($p->role != 0) {
+                                    if ($p->role != 3) {
                                         echo '<br><input type="radio" id="QLSP" name="role" value="1">
                                         <label for="QLSP">Quản lý sản phẩm</label><br>
                                         <input type="radio" id="QLKH" name="role" value="2">

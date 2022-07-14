@@ -45,7 +45,7 @@ return new class extends Migration
                 'name' => 'Lê Văn An',
                 'email' => 'an@gmail.com',
                 'password' => bcrypt('123456'),
-                'role' => '0'
+                'role' => '3'
             ]
         );
     }

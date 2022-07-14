@@ -42,7 +42,7 @@ class AdminController extends Controller
         // $remember  = $request->has('remember');$remember
         
         if (Auth::attempt($arr)) {
-            if (Auth::user()->role == 0) {
+            if (Auth::user()->role == 3) {
                 return redirect()->route('admin.dashboard');
             }
             elseif (Auth::user()->role == 1) {
