@@ -29,18 +29,18 @@ return new class extends Migration
 
         DB::table('comments')->insert(
             [
-                'comment_point' => '5',
+                'comment_point' => '4',
                 'comment_content' => 'Sản phẩm rất đẹp',
-                'comment_username' => 'Huyền',
+                'comment_username' => 'Ngọc Huyền',
                 'product_id' => '1',
                 'customer_id' => '1'
             ]
         );
         DB::table('comments')->insert(
             [
-                'comment_point' => '4',
+                'comment_point' => '5',
                 'comment_content' => 'Sản phẩm rất đẹp, giao hàng nhanh',
-                'comment_username' => 'Bình',
+                'comment_username' => 'Đàm Quân',
                 'product_id' => '1',
                 'customer_id' => '2'
             ]

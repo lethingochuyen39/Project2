@@ -18,10 +18,12 @@ class News extends Model
      // mặc định khóa chính sẽ tự động tăng
      public $incrementing = true; // false: khóa chỉnh sẽ không tự động tăng
      protected $fillable = [
-         'news_id',
-         'news_date',
-         'news_topic',
-         'news_content',
-         'news_image'
+        'news_id',
+        'news_tite',
+        'news_slug',
+        'news_desc',
+        'news_content',
+        'news_meta_desc',
+        'news_image'
      ];
 }

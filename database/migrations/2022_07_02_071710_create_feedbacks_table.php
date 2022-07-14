@@ -24,11 +24,20 @@ return new class extends Migration
             $table->foreign('customer_id')
                 ->references('customer_id')->on('customers');
         });
+
         DB::table('feedbacks')->insert(
             [
-                'feedback_name' => 'An',
-                'feedback_email' => 'An@gmail.com',
+                'feedback_name' => 'Quốc Tuấn',
+                'feedback_email' => 'tuan@gmail.com',
                 'feedback_content' => 'Shop rất nhiệt tình, giao hàng nhanh'
+            ]
+        );
+
+        DB::table('feedbacks')->insert(
+            [
+                'feedback_name' => 'Thành Long',
+                'feedback_email' => 'long@gmail.com',
+                'feedback_content' => 'Sản phẩm rất đẹp'
             ]
         );
     }

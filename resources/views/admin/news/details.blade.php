@@ -24,7 +24,7 @@
                            
                             <div class="form-group">
                                 <label for="txt-price">Tiêu đề</label>
-                                <input type="text" class="form-control" id="txt-price" name="news_topic" value="{{ $p->news_topic }}">
+                                <input type="text" class="form-control" id="txt-price" name="news_topic" value="{{ $p->news_title }}">
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Địa chỉ</label><br>

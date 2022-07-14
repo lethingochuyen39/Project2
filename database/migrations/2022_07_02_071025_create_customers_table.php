@@ -39,11 +39,11 @@ return new class extends Migration
 
         DB::table('customers')->insert(
             [
-                'customer_name' => 'Lê Bình',
+                'customer_name' => 'Lê Đàm Quân',
                 'customer_telephone' => '0777295703',
-                'customer_email' => 'binh@gmail.com',
-                'customer_address' => '132 bến vân đồn , phường 6, quận 4, Hồ chí Minh',
-                'customer_password' =>md5('binh12345')
+                'customer_email' => 'quan@gmail.com',
+                'customer_address' => '147 nguyễn cửu vân, phường 17, quận Bình Thạnh, Hồ chí Minh',
+                'customer_password' =>md5('123456')
 
             ]
         );

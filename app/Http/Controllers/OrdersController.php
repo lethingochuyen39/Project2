@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\OrderRequest;
-use Illuminate\Support\Facades\DB;
 use App\Models\Order;
 class OrdersController extends Controller
 {
@@ -37,11 +35,14 @@ class OrdersController extends Controller
     {
         $p = Order::find($order_id);
         $p->delete();
-        return redirect()->route('admin.orders.index');
+        return redirect()->route('orders.index');
     }
+
     public function details($orders_id)
     {
         $p = Order::find($orders_id);
         return view('admin.orders.details', ['p' => $p]);
     }
+
+    
 }

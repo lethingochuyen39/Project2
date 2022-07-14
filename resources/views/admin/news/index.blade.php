@@ -29,23 +29,25 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <table id="news" class="table table-bordered table-hover">
-                        <thead>
+                    <thead>
                             <tr>
-                                <th style="width: 1%" class="text-center">Mã tin tức</th>
-                                <th style="width: 10%" class="text-center">Ngày đăng</th>
-                                <th style="width: 15%" class="text-center">Tiêu đề</th>
-                                <th style="width: 40%" class="text-center">Nội dung</th>
-                                <th style="width: 10%" class="text-center">Hình ảnh</th>
-                                <th style="width: 25%" class="text-center">Tùy chọn</th>
+                                <th>Mã tin tức</th>
+                                <th>Tiêu đề</th>
+                                <th>Tóm tắt</th>
+                                <th>Nội dung</th>
+                                <th>Meta nội dung</th>
+                                <th>Hình ảnh</th>
+                                <th>Tùy chọn</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($news as $p)
                             <tr>
                                 <td>{{ $p->news_id }}</td>
-                                <td>{{ $p->news_date }}</td>
-                                <td>{{ $p->news_topic }}</td>
+                                <td>{{ $p->news_title }}</td>
+                                <td>{{ $p->news_desc }}</td>
                                 <td>{{ $p->news_content }}</td>
+                                <td>{{ $p->news_meta_desc}}</td>
                                 <td><img width="100px" src="{{url('images/'.$p->news_image) }}" /></td>
                                 <td class="text-right">
                                     <a class="btn btn-primary btn-sm" href="{{Route('admin.news.details',$p->news_id)}}">

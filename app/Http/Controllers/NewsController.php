@@ -26,6 +26,11 @@ class NewsController extends Controller
             $imageName = null;
         }
         $p = new News($news);
+        $p->news_title = $news['news_title'];
+        $p->news_slug = $news['news_slug'];
+        $p->news_desc = $news['news_desc'];
+        $p->news_content = $news['news_content'];
+        $p->news_meta_desc = $news['news_meta_desc'];
         $p->news_image = $imageName;
         $p->save();
         return redirect()->route('admin.news.index');
@@ -53,28 +58,24 @@ class NewsController extends Controller
             $imageName = $p->news_image;
         }
 
-        // if ($request->hasFile('news_image')) {
-        //     $file = $request->file('news_image');
-        //     $imageName = $file->getClientOriginalName();
-        //     $file->move('news_images', $imageName);
-        // } else {
-        //     $p = News::find($news_id);
-        //     $imageName = $p->image;
-        // }
         $p = News::find($news_id);
-        $p->news_date = $news['news_date'];
-        $p->news_topic = $news['news_topic'];
+        $p->news_title = $news['news_title'];
+        $p->news_slug = $news['news_slug'];
+        $p->news_desc = $news['news_desc'];
         $p->news_content = $news['news_content'];
-        $p->news_image = $news['news_image'];
+        $p->news_meta_desc = $news['news_meta_desc'];
+        $p->news_image = $imageName;
         $p->save();
         return redirect()->route('admin.news.index');
     }
+
     public function delete($news_id)
     {
         $p = News::find($news_id);
         $p->delete();
         return redirect()->route('admin.news.index');
     }
+    
     public function details($news_id)
     {
         $p = News::find($news_id);

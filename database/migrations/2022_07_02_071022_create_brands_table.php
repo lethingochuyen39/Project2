@@ -17,14 +17,13 @@ return new class extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
             $table->string('brand_name',100);
-            // $table->string('brand_logo',255)->nullable();
-            $table->timestamps();
+            $table->string('brand_logo',255)->nullable();
            
         });
 
         DB::table('brands')->insert(
             [
-                'brand_name' => 'MIZUNO'
+                'brand_name' => 'Adidas'
             ]
             );
     }

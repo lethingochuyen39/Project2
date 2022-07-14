@@ -8,12 +8,26 @@ use App\Models\Feedback;
 use App\Http\Requests\AdminLoginRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
+
+    // public function AuthLogin(){
+    //    if(Auth::check()){
+    //    Auth::user()->id ==
+    //     return redirect()->route('admin.postLogin');
+      
+    //    }else{
+       
+    //     return redirect()->route('admin.login');
+    //    }
+    
+    // }
+
     public function login()
     {
-
         return view('admin.login-admin');
     }
 
@@ -32,21 +46,36 @@ class AdminController extends Controller
                 return redirect()->route('admin.dashboard');
             }
             elseif (Auth::user()->role == 1) {
-                return redirect()->route('admin.customer');
+                return redirect()->route('admin.dashboard1');
             }
             elseif (Auth::user()->role == 2) {
 
-                return redirect()->route('admin.login');
+                return redirect()->route('admin.dashboard2');
             }
         } else {
             return redirect()->route('admin.login')->with('thongbao', 'Email hoặc mật khẩu không đúng , vui lòng nhập lại!');
         }
     }
 
-
+// trang chủ quản lý
     public function dashboard()
     {
+        // $this->AuthLogin();
         return view('admin.dashboard-admin');
+    }
+
+    // trang chủ quản lý sản phẩm
+    public function dashboard1()
+    {
+        // $this->AuthLogin();
+        return view('admin.dashboard1-admin');
+    }
+
+    // trang chủ quản lý khách hàng
+    public function dashboard2()
+    {
+        // $this->AuthLogin();
+        return view('admin.dashboard2-admin');
     }
 
     public function logout()

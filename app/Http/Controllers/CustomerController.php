@@ -15,7 +15,7 @@ Session_start();
 class CustomerController extends Controller
 {
 
-    // khách hàng
+    // trang chủ khách hàng
     public function home()
     {
             return view('user.pages.home');
@@ -27,6 +27,7 @@ class CustomerController extends Controller
         return view('user.register-user');
     }
 
+    // thêm khách hàng
     public function add(RegisterRequest $request)
     {
         $customer_name = $request->customer_name;
@@ -50,6 +51,7 @@ class CustomerController extends Controller
         }
     }
 
+    
     public function logout()
     {
         Session::put('customer_name', null);

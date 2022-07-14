@@ -13,37 +13,43 @@ Thêm tin tức
                     <div class="card-header">
                         <h3 class="card-title">Thêm tin tức</h3>
                     </div>
-                   
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <!-- form start -->
                     <form role="form" action="{{ Route('admin.news.postCreate') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="txt-date">Ngày đăng</label>
-                                <small>@if($errors->has('news_date'))
-                                <br><strong class="text-danger">{{ $errors->first('news_date') }}</strong>
-                                @endif</small>
-                                <input type="datetime-local" class="form-control" id="date" name="news_date">
+                                <label>Tiêu đề</label>
+                                <textarea class="form-control" style="resize: none" name="news_title" placeholder="" onkeyup="ChangeToSlug();" id="slug"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="txt-name">Tiêu đề</label>
-                                <small>@if($errors->has('news_topic'))
-                                <br><strong class="text-danger">{{ $errors->first('news_topic') }}</strong>
-                                @endif</small>
-                                <input type="text" class="form-control" id="topic" name="news_topic" placeholder="Nhập tiêu đề bài báo">
+                                <label>Slug</label>
+                                <textarea class="form-control" style="resize: none" name="news_slug" id="convert_slug" placeholder=""></textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="txt-name">Tóm tắt bài viết</label>
+                                <textarea class="form-control" style="resize: none" rows="8" name="news_desc" id="ckeditor1" placeholder=""></textarea>
+                            </div>
+
                             <div class="form-group">
                                 <label>Nội dung</label>
-                                <small>@if($errors->has('news_content'))
-                                <br><strong class="text-danger">{{ $errors->first('news_content') }}</strong>
-                                @endif</small>
-                                <textarea class="form-control" rows="3" name="news_content" placeholder="Nhập nội dung..."></textarea>
+                                <textarea class="form-control" style="resize: none" rows="8" name="news_content" id="ckeditor2" placeholder=""></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Meta nội dung</label>
+                                <textarea class="form-control" style="resize: none" rows="5" name="news_meta_desc" placeholder=""></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="image">Ảnh</label>
-                                <small>@if($errors->has('news_image'))
-                                <br><strong class="text-danger">{{ $errors->first('news_image') }}</strong>
-                                @endif</small>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" id="image" name="news_image">

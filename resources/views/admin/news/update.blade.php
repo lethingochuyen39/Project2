@@ -8,10 +8,18 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Chỉnh sửa tin tức - {{ $p->news_topic }}</h3>
+                        <h3 class="card-title">Chỉnh sửa tin tức - {{ $p->news_title }}</h3>
                     </div>
                     <!-- /.card-header -->
-                    @if($errors->any())
+                  
+
+                    @if(Session::has('thongbao'))
+                    <p style="color: green;">{{Session::get('thongbao')}}</p>
+                    @endif
+                    <!-- form start -->
+                    <form role="form" action="{{ Route('admin.news.postUpdate',$p->news_id) }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        @if($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach($errors->all() as $error)
@@ -20,32 +28,33 @@
                         </ul>
                     </div>
                     @endif
-
-                    @if(Session::has('thongbao'))
-                    <p style="color: green;">{{Session::get('thongbao')}}</p>
-                    @endif
-                    <!-- form start -->
-                    <form role="form" action="{{ Route('admin.news.postUpdate',$p->news_id) }}" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <div class="card-body">
+                    <div class="card-body">
                             <div class="form-group">
                                 <label for="txt-id">Mã tin tức</label>
-                                <input type="text" class="form-control" id="txt-id" name="news_id" value="{{ $p->news_id }}" readonly>
+                                <input type="text" class="form-control" id="txt-id" name="news_id"  value="{{ $p->news_id }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="txt-date">Ngày đăng</label>
-                                <input type="datetime-local" class="form-control" id="txt-date" name="news_date" value="{{ $p->news_date }}">
+                                <label>Tiêu đề</label>
+                                <textarea class="form-control" style="resize: none" name="news_title" value="{{ $p->news_title }}" onkeyup="ChangeToSlug();" id="slug"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="txt-topic">Tiêu đề</label>
-                                <input type="text" class="form-control" id="txt-topic" name="news_topic" value="{{ $p->news_topic }}">
+                                <label>Slug</label>
+                                <textarea class="form-control" style="resize: none" name="news_slug" id="convert_slug" value="{{ $p->news_slug }}"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="txt-name">Tóm tắt bài viết</label>
+                                <textarea class="form-control" style="resize: none" rows="8" name="news_desc" id="ckeditor1" value="{{ $p->news_desc }}"></textarea>
+                            </div>
+
                             <div class="form-group">
                                 <label>Nội dung</label>
-                                <textarea class="form-control" cols="50" rows="3" name="news_content" value="">{{ $p->news_content }}</textarea>
+                                <textarea class="form-control" style="resize: none" rows="8" name="news_content" id="ckeditor2" value="{{ $p->news_content }}"></textarea>
                             </div>
 
-
+                            <div class="form-group">
+                                <label>Meta nội dung</label>
+                                <textarea class="form-control" style="resize: none" rows="5" name="news_meta_desc" value="{{ $p->news_meta_desc }}"></textarea>
+                            </div>
                             <div class="form-group">
                                 <label for="image">Ảnh</label>
                                 <img class="img-fluid" src="{{ url('images/'.$p->news_image) }}" width="100" height="100" />
@@ -63,7 +72,7 @@
                         </div>
                     </form>
                 </div>
-                <!-- /.card -->
+
             </div>
         </div>
     </div>

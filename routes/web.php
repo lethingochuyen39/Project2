@@ -36,6 +36,9 @@ Route::get('admin/dashboard-admin',[AdminController::class,'dashboard'])->name('
 
 Route::get('logout-admin',[AdminController::class,'logout'])->name('admin.logout');
 
+Route::get('admin/dashboard1-admin',[AdminController::class,'dashboard1'])->name('admin.dashboard1');
+
+Route::get('admin/dashboard2-admin',[AdminController::class,'dashboard2'])->name('admin.dashboard2');
 
 // khach hàng
 Route::get('admin/customer',[AdminController::class,'customer'])->name('admin.customer');
