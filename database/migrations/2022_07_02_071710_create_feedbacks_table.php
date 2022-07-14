@@ -40,6 +40,14 @@ return new class extends Migration
                 'feedback_content' => 'Sản phẩm rất đẹp'
             ]
         );
+        
+        DB::table('feedbacks')->insert(
+            [
+                'feedback_name' => 'Lê Đàm Quân',
+                'feedback_email' => 'quan@gmail.com',
+                'feedback_content' => 'Sản phẩm rất đẹp, nhiều tin tức hay'
+            ]
+        );
     }
 
     /**

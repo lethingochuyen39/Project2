@@ -22,7 +22,6 @@ return new class extends Migration
             $table->timestamp('product_date')->useCurrent();
             $table->text('product_description', 1000)->nullable();
             $table->string('product_image', 255);
-            // $table->string('product_warranty', 20)->nullable();
             $table->integer('product_type_id')->unsigned();
             $table->foreign('product_type_id')
                 ->references('id')->on('product_types')->cascadeOnDelete();
@@ -35,11 +34,11 @@ return new class extends Migration
         DB::table('products')->insert(
             [
 
-                'product_name' => 'MIZUNO MORELIA ULTRA LIGHT MADE IN JAPAN FG - GOLD/WHITE',
-                'product_price' => '5500',
+                'product_name' => 'MIZUNO - GOLD/WHITE',
+                'product_price' => '550000',
                 'product_image' => 'sp1.jpg',
                 'product_highlight' => '1',
-                'product_description' => 'Vào tháng 3 năm 2021, thương hiệu Nhật Bản đình đám Mizuno cho ra mắt một dòng giày đá bóng siêu nhẹ không hề kém cạnh Mercurial của Nike, X Ghosted của adidas hay Ultra của Puma. Sự ra mắt của Mizuno Morelia Ultra Light MIJ chính xác là một sự chứng minh Mizuno không hề kém cạnh cuộc trong cuộc đua tốc độ này.',
+                'product_description' =>'Vào tháng 3 năm 2021, thương hiệu Nhật Bản đình đám Mizuno cho ra mắt một dòng giày đá bóng siêu nhẹ không hề kém cạnh Mercurial của Nike, X Ghosted của adidas hay Ultra của Puma. Sự ra mắt của Mizuno Morelia Ultra Light MIJ chính xác là một sự chứng minh Mizuno không hề kém cạnh cuộc trong cuộc đua tốc độ này.',
                 'product_type_id' => '2',
                 'brand_id' => '1'
             ]

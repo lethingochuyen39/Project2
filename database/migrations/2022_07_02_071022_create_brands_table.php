@@ -23,9 +23,9 @@ return new class extends Migration
 
         DB::table('brands')->insert(
             [
-                'brand_name' => 'Adidas'
+                'brand_name' => 'MIZUNO'
             ]
-            );
+        );
     }
 
     /**

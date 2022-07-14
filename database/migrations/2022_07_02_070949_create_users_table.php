@@ -26,24 +26,32 @@ return new class extends Migration
 
         DB::table('users')->insert(
             [
-                'name' => 'Huyền',
-                'email' => 'huyenltn@gmail.com',
+                'name' => 'Thành Long',
+                'email' => 'long@gmail.com',
                 'password' => bcrypt('123456'),
                 'role' => '1'
             ]
         );
         DB::table('users')->insert(
             [
-                'name' => 'Bình Lê',
-                'email' => 'binh@gmail.com',
+                'name' => 'Quốc Tuấn',
+                'email' => 'tuan@gmail.com',
                 'password' => bcrypt('123456'),
                 'role' => '2'
             ]
         );
         DB::table('users')->insert(
             [
-                'name' => 'Lê Văn An',
-                'email' => 'an@gmail.com',
+                'name' => 'Ngọc Huyền',
+                'email' => 'huyen@gmail.com',
+                'password' => bcrypt('123456'),
+                'role' => '2'
+            ]
+        );
+        DB::table('users')->insert(
+            [
+                'name' => 'Đàm Quân',
+                'email' => 'quan@gmail.com',
                 'password' => bcrypt('123456'),
                 'role' => '3'
             ]
