@@ -38,7 +38,7 @@ return new class extends Migration
                 'product_price' => '550000',
                 'product_image' => 'sp1.jpg',
                 'product_highlight' => '1',
-                'product_description' =>'Vào tháng 3 năm 2021, thương hiệu Nhật Bản đình đám Mizuno cho ra mắt một dòng giày đá bóng siêu nhẹ không hề kém cạnh Mercurial của Nike, X Ghosted của adidas hay Ultra của Puma. Sự ra mắt của Mizuno Morelia Ultra Light MIJ chính xác là một sự chứng minh Mizuno không hề kém cạnh cuộc trong cuộc đua tốc độ này.',
+                'product_description' =>'Thương hiệu Nhật Bản đình đám Mizuno cho ra mắt một dòng giày đá bóng siêu nhẹ không hề kém cạnh Mercurial của Nike, X Ghosted của adidas hay Ultra của Puma. Sự ra mắt của Mizuno Morelia Ultra Light MIJ chính xác là một sự chứng minh Mizuno không hề kém cạnh cuộc trong cuộc đua tốc độ này.',
                 'product_type_id' => '2',
                 'brand_id' => '1'
             ]
