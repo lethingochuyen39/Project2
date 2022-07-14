@@ -53,7 +53,7 @@
                                         <input type="radio" id="QLKH" name="role" value="2">
                                         <label for="QLKH">Quản lý khách hàng</label><br>';
                                     }else{
-                                        echo '<br><input type="radio" id="QLSP" name="role" value="0" checked>
+                                        echo '<br><input type="radio" id="QL" name="role" value="3" checked>
                                          <label for="QLSP">Quản lý</label><br>';
                                     }
                                     

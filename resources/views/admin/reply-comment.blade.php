@@ -39,10 +39,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Nội dung bình luận</label> <br>
-                                <textarea name="comment_reply" id="" cols="50" rows="1" readonly>{{ $p->comment_content }}</textarea>
+                                <textarea name="comment_reply" id="" cols="57" rows="1" readonly>{{ $p->comment_content }}</textarea>
                                 <div class="form-group">
                                     <label for="txt-price">Nội dung trả lời</label> <br>
-                                    <textarea name="comment_reply" id="" cols="50" rows="5">{{ $p->comment_reply }}</textarea>
+                                    <textarea name="comment_reply" id="" cols="57" rows="5">{{ $p->comment_reply }}</textarea>
                                 </div>
                                 
 

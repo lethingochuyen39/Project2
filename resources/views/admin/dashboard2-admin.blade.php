@@ -40,9 +40,7 @@
         </div>
 
         <div class="row mb-2">
-            <div class="col-sm-3 lg-3">
-                <a href="{{ route('admin.comment')}}"> <img src="{{ asset('backend/img/binh_luan.jpg') }}" alt="" width="100%"></a>
-            </div>
+          
             <div class="col-sm-3 lg-3">
                 <a href="{{ route('admin.feedback')}}"> <img src="{{ asset('backend/img/phan_hoi_website.jpg') }}" alt="" width="100%"></a>
             </div>

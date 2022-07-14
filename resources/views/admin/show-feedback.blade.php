@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Nội dung phản hồi</label> <br>
-                                <textarea name="feedback_content" id="feedback_content" cols="50" rows="5" readonly>{{ $p->feedback_content}}</textarea>
+                                <textarea name="feedback_content" id="feedback_content" cols="57" rows="5" readonly>{{ $p->feedback_content}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Ngày phản hồi</label>

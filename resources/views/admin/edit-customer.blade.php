@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Địa chỉ</label><br>
-                                <textarea name="customer_address" id="customer_address" cols="50" rows="1" class="form-control" readonly>{{ $p->customer_address }}</textarea>
+                                <textarea name="customer_address" id="customer_address"  rows="1" class="form-control" readonly>{{ $p->customer_address }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="txt-price">Trạng thái </label>
