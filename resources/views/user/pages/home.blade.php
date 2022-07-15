@@ -140,85 +140,50 @@
     }
 
     .info-2 {
-        background-image: url("{{asset('frontend/img/banner_phukien.jpg')}}");
+        background-image: url("{{ asset('frontend/img/banner_phukien.jpg') }}");
         background-size: cover;
         height: 100vh;
         background-position: center;
         display: block;
     }
 
+    #phukien-info-2 {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: whitesmoke;
+    }
+
     /*(----------Info-End--------)*/
 </style>
-<h2 class="font-weight-light float-start">Bootstrap 5 Multi Item Carousel</h2>
-<div class="float-end pe-md-4">
-    <a class="indicator" href="#featureCarousel" role="button" data-bs-slide="prev">
-        <span class="fas fa-chevron-left" aria-hidden="true"></span>
-    </a> &nbsp;&nbsp;
-    <a class="w-aut indicator" href="#featureCarousel" role="button" data-bs-slide="next">
-        <span class="fas fa-chevron-right" aria-hidden="true"></span>
-    </a>
-</div>
-<div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-img">
-                    <img src="https://source.unsplash.com/JTkibpa_Xv4/450x650" class="img-fluid">
-                </div>
-                <div class="card-img-overlays">Slide 1</div>
-            </div>
+
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.css') }}">
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ asset('frontend/img/banner_1.jpg') }}" alt="1" class="d-block w-100" height="700">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('frontend/img/banner_2.jpg') }}" alt="1" class="d-block w-100" height="700">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('frontend/img/banner_3.jpg') }}" alt="1" class="d-block w-100" height="700">
         </div>
     </div>
-    <div class="carousel-item">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-img">
-                    <img src="https://source.unsplash.com/m-eNBfYYrbA/450x650" class="img-fluid">
-                </div>
-                <div class="card-img-overlays">Slide 2</div>
-            </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-img">
-                    <img src="https://source.unsplash.com/W2XfQIptWYs/450x650" class="img-fluid">
-                </div>
-                <div class="card-img-overlays">Slide 3</div>
-            </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-img">
-                    <img src="https://source.unsplash.com/txX3cXgiAzU/450x650" class="img-fluid">
-                </div>
-                <div class="card-img-overlays">Slide 4</div>
-            </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-img">
-                    <img src="https://source.unsplash.com/2zjKnJsT7D0/450x650" class="img-fluid">
-                </div>
-                <div class="card-img-overlays">Slide 5</div>
-            </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-img">
-                    <img src="https://source.unsplash.com/AvnXTPOPVHY/450x650" class="img-fluid">
-                </div>
-                <div class="card-img-overlays">Slide 6</div>
-            </div>
-        </div>
-    </div>
+
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
 </div>
 
 <!--Introduction-->
@@ -310,10 +275,11 @@
     </div>
 </div>
 <!--Introduction-->
-<div class="recommended_items">
-    <!--recommended_items-->
-    <h2 class="title text-center">Sản phẩm liên quan</h2>
 
+<!--recommended_items-->
+
+<!-- <div class="recommended_items">
+    <h2 class="title text-center">Sản phẩm liên quan</h2>
     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="item active">
@@ -327,20 +293,16 @@
                                     <p>ten san pham</p>
 
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
-
         </div>
-
     </div>
-</div>
+</div> -->
+
 <!--/recommended_items-->
+
 
 <section id="giay" class="info-1 d-flex justify-content-center align-items-end">
     <div class="container mb-3 py-2 mb-md-1 mb-lg-0 py-lg-4 d-flex justify-content-center align-items-center">

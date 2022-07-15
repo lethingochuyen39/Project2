@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
+use App\Models\Brand;
+use App\Models\Product_Type;
 use App\Models\Slider;
 use App\Models\Promotion;
 
@@ -16,7 +18,9 @@ class ProductController extends Controller
     }
     public function create()
     {
-        return view('admin.product.create');
+        $product_type = Product_Type::all();
+        $brand = Brand::all();
+        return view('admin.product.create',['product_type'=>$product_type,'brand'=>$brand]);
     }
     public function postCreate(ProductRequest $request)
     {
@@ -31,12 +35,15 @@ class ProductController extends Controller
         $p = new Product($product);
         $p->product_image = $imageName;
         $p->save();
+
         return redirect()->route('product.index');
     }
     public function update($product_id)
     {
         $p = Product::find($product_id);
-        return view('admin.product.update', ['p' => $p]);
+        $brand = Brand::all();
+        $product_type = Product_Type::all();
+        return view('admin.product.update', ['p' => $p,'product_type'=>$product_type,'brand'=>$brand]);
     }
     public function postUpdate(ProductRequest $request, $product_id)
     {
@@ -70,12 +77,9 @@ class ProductController extends Controller
     public function details($product_id)
     {
         $details = Product::find($product_id);
-        $slider1 = Slider::find($product_id)->where('numerical_order','=',1)->first();
-        $slider2 = Slider::find($product_id)->where('numerical_order','=',2)->first();
-        $slider3 = Slider::find($product_id)->where('numerical_order','=',3)->first();
-        $slider4 = Slider::find($product_id)->where('numerical_order','=',4)->first();
+        $slider = Slider::where('product_id','=',$product_id)->orderBy('numerical_order')->get();
         // promotion
         $promotion_product = Promotion::where('product_id', '=', $product_id)->first();
-        return view ('admin.product.details',['details'=>$details,'slider1'=>$slider1,'slider2'=>$slider2,'slider3'=>$slider3,'slider4'=>$slider4,'p'=>$promotion_product]);
+        return view('admin.product.details', ['details' => $details, 'slider' => $slider, 'p' => $promotion_product]);
     }
 }

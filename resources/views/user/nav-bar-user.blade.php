@@ -1,3 +1,4 @@
+
 <div style="background-color: #181818 ;">
     <div class="container">
         <div class="row">
@@ -48,8 +49,9 @@
                     <a class="nav-link active" aria-current="page" href="{{ Route('customer.home') }}">Trang chủ</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ route('customer.login') }}" id="dropdown07" data-bs-toggle="dropdown" aria-current="page">Sản Phẩm</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown" aria-current="page">Sản Phẩm</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown07">
+                        <li><a class="dropdown-item" href="{{ Route('user.product') }}">Tất cả sản phẩm</a></li>
                         <li><a class="dropdown-item" href="#">Giày cỏ tự nhiên</a></li>
                         <li><a class="dropdown-item" href="#">Giày cỏ nhân tạo</a></li>
                         <li><a class="dropdown-item" href="#">Giày futsal</a></li>
@@ -59,7 +61,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown" aria-expanded="false">Hướng dẫn</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown07">
-                        <li><a class="dropdown-item" href="">Hướng dẫn chọn size</a></li>
+                        <li><a class="dropdown-item" href="{{ route('user.size') }}">Hướng dẫn chọn size</a></li>
                         <li><a class="dropdown-item" href="{{ route('user.insurance') }}">Chính sách bảo hành</a></li>
                         
                     </ul>

@@ -11,7 +11,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Thêm mới thương hiệu</h3>
+                        <h3 class="card-title">Thêm thương hiệu</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -38,6 +38,15 @@
                             <div class="form-group">
                                 <label for="txt-name">Tên thương hiệu</label>
                                 <input type="text" class="form- control" id="txt-name" name="brand_name" placeholder="Nhập tên thương hiệu...">
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Logo Thương Hiệu</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" id="image" name="brand_logo">
+                                    </div>
+                                    <label class="custom-file-label" for="image">Chọn logo</label>
+                                </div>
                             </div>
                             
 

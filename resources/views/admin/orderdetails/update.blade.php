@@ -1,6 +1,6 @@
 <!-- lưu tại /resources/views/product/update.blade.php -->
 @extends('admin.layout-admin')
-@section('title', 'orderdetails - update')
+@section('title', 'Cập nhật chi tiết đơn hàng')
 @section('content')
 <section class="content">
     <div class="container-fluid">
@@ -9,7 +9,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Update {{ $p->orderDetail_id }}</h3>
+                        <h3 class="card-title">Cập nhật {{ $p->orderDetail_id }}</h3>
                     </div>
                     <!-- /.card-header -->
                     @if($errors->any())
@@ -22,39 +22,39 @@
                     </div>
                     @endif
                     <!-- form start -->
-                    <form role="form" action="{{ Route('product.postUpdate',$p->orderDetail_id) }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ Route('orderdetails.postUpdate',$p->orderDetail_id) }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="txt-id">OrderDetail ID</label>
-                                <input type="text" class="form-control" id="txt-id" name="orderDetail_id" placeholder="1" value="{{ $p->orderDetail_id }}" readonly>
+                                <label for="txt-id">ID</label>
+                                <input type="text" class="form-control" id="txt-id" name="orderDetail_id" value="{{ $p->orderDetail_id }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="txt-name">OrderDetail Quanity</label>
-                                <input type="text" class="form-control" id="txt-quanity" name="orderDetail_quantity	" placeholder="Input Quanity" value="{{ $p->orderDetail_quantity }}">
+                                <label for="txt-name">Số lượng</label>
+                                <input type="text" class="form-control" id="txt-quantity" name="orderDetail_quantity"  value="{{ $p->orderDetail_quantity }}">
                             </div>
                             <div class="form-group">
-                                <label for="txt-price">OrderDetail Price</label>
-                                <input type="text" class="form-control" id="txt-price" name="orderDetail_price" placeholder="1" value="{{ $p->	orderDetail_price }}">
+                                <label for="txt-price">Giá tiền</label>
+                                <input type="text" class="form-control" id="txt-price" name="orderDetail_price" value="{{ $p->orderDetail_price }}">
                             </div>
                             <div class="form-group">
-                                <label for="txt-price">Product Size</label>
-                                <input type="text" class="form-control" id="txt-size" name="product_size" placeholder="40" value="{{ $p->product_size }}">
+                                <label for="txt-price">Kích thước sản phẩm</label>
+                                <input type="text" class="form-control" id="txt-size" name="product_size"  value="{{ $p->product_size }}">
                             </div>
                             <div class="form-group">
-                                <label for="txt-price">Order ID</label>
-                                <input type="text" class="form-control" id="txt-orderID" name="order_id " placeholder="40" value="{{ $p->order_id  }}">
+                                <label for="txt-price">Mã đơn hàng</label>
+                                <input type="text" class="form-control" id="txt-orderID" name="order_id" value="{{ $p->order_id }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="txt-price">Product ID</label>
-                                <input type="text" class="form-control" id="txt-productID" name="	product_id" placeholder="40" value="{{ $p->	product_id }}">
+                                <label for="txt-price">Mã sản phẩm</label>
+                                <input type="text" class="form-control" id="txt-productID" name="product_id" value="{{ $p->product_id }}" readonly>
                             </div>
                             
                             
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
                     </form>
                 </div>

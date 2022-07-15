@@ -1,6 +1,6 @@
 <!-- lưu tại /resources/views/product/update.blade.php -->
 @extends('admin.layout-admin')
-@section('title', 'orders - update')
+@section('title', 'Cập nhật đơn hàng')
 @section('content')
 <section class="content">
     <div class="container-fluid">
@@ -43,23 +43,23 @@
                             </div>
                             <div class="form-group">
                                 <label for="txt-topic">Customer Telephone</label>
-                                <input type="text" class="form-control" id="txt-CTelephone" name="customer_telephone" value="{{ $p->customer_telephone }}">
+                                <input type="text" class="form-control" id="txt-CTelephone" name="customer_telephone" value="{{ $p->customers->customer_telephone }}">
                             </div>
                             <div class="form-group">
                                 <label for="txt-topic">Customer Name</label>
-                                <input type="text" class="form-control" id="txt-CName" name="customer_name" value="{{ $p->customer_name }}">
+                                <input type="text" class="form-control" id="txt-CName" name="customer_name" value="{{ $p->customers->customer_name }}">
                             </div>
                             <div class="form-group">
                                 <label for="txt-topic">Customer Address</label>
-                                <input type="text" class="form-control" id="txt-CAddress" name="customer_address" value="{{ $p->customer_address }}">
+                                <input type="text" class="form-control" id="txt-CAddress" name="customer_address" value="{{ $p->customers->customer_address }}">
                             </div>
                             <div class="form-group">
                                 <label for="txt-topic">Customer Mail</label>
-                                <input type="text" class="form-control" id="txt-CMail" name="customer_mail" value="{{ $p->customer_mail }}">
+                                <input type="text" class="form-control" id="txt-CMail" name="customer_mail" value="{{ $p->customers->customer_email }}">
                             </div>
                             <div class="form-group">
                                 <label for="txt-topic">Customer ID</label>
-                                <input type="text" class="form-control" id="txt-CMail" name="cid" value="{{ $p->customer_id }}" readonly>
+                                <input type="text" class="form-control" id="txt-CMail" name="cid" value="{{ $p->customers->customer_id }}" readonly>
                             </div>
 
 

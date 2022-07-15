@@ -1,4 +1,3 @@
-<!-- Lưu tại resources/views/product/index.blade.php -->
 @extends('admin.layout-admin')
 @section('title', 'Danh sách Thương hiệu')
 @section('content')
@@ -25,16 +24,17 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Bảng thương hiệu</h3>
+                    <h3 class="card-title">Bảng Thương Hiệu</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="product_type" class="table table-bordered table-hover">
+                    <table id="brands" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Tên</th>
-                                <th>Tùy chọn</th>
+                                <th>Tên Thương hiệu</th>
+                                <th style="width: 200px">Hình ảnh</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,11 +42,12 @@
                             <tr>
                                 <td>{{ $p->id }}</td>
                                 <td>{{ $p->brand_name }}</td>
+                                <td><img width="200px" style="position: center ;" src="{{url('images/'.$p->brand_logo) }}" /></td>
                                 <td class="text-right">
                                     <a class="btn btn-info btn-sm" href="{{ Route('brand.update',$p->id) }}">
                                         <i class="fas fa-pencil-alt"></i> Sửa
                                     </a>
-                                    <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');"  href="{{ Route('brand.delete',$p->id) }}">
+                                    <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ Route('brand.delete',$p->id) }}">
                                         <i class="fas fa-trash"></i> Xóa
                                     </a>
                                 </td>
@@ -68,7 +69,7 @@
 @section('script-section')
 <script>
     $(function() {
-        $('#product_type').DataTable({
+        $('#brands').DataTable({
             "paging": true,
             "lengthChange": true,
             "searching": true,

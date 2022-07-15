@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Slider;
 use App\Http\Requests\SliderRequest;
+use App\Models\Product;
 
 class SliderController extends Controller
 {
@@ -13,7 +15,8 @@ class SliderController extends Controller
     }
     public function create()
     {
-        return view('admin.slider.create');
+        $product = Product::all();
+        return view('admin.slider.create',['product'=>$product]);
     }
     public function postCreate(SliderRequest $request)
     {
@@ -33,7 +36,8 @@ class SliderController extends Controller
     public function update($slider_id)
     {
         $p = Slider::find($slider_id);
-        return view('admin.slider.update', ['p' => $p]);
+        $product = Product::all();
+        return view('admin.slider.update', ['p' => $p,'product'=>$product]);
     }
     public function postUpdate(SliderRequest $request, $slider_id)
     {

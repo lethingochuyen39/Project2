@@ -1,17 +1,17 @@
 @extends('admin.layout-admin')
-@section('title', 'orders index')
+@section('title', 'Dánh sách đơn hàng')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>DataTables</h1>
+                <h1>Danh sách Đơn hàng</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb- item"><a href="#">Home</a></li>
-                    <li class="breadcrumb- item active">DataTables</li>
+                    <li class="breadcrumb- item">Trang chủ</li>
+                    <li class="breadcrumb- item active">Đơn hàng</li>
                 </ol>
             </div>
         </div>
@@ -31,11 +31,11 @@
                     <table id="brands" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Order ID</th>
-                                <th>Order Date</th>
-                                <th>Order Status</th>
-                                <th>Order Note</th>
-                                <th></th>
+                                <th>ID</th>
+                                <th>Ngày đặt hàng</th>
+                                <th>Trạng thái</th>
+                                <th>Ghi chú</th>
+                                <th>Tùy chọn</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,27 +55,19 @@
                                 <td>{{ $p->order_note }}</td>
                                 <td class="text-right">
                                     <a class="btn btn-primary btn-sm" href="{{Route('orders.details',$p->order_id)}}">
-                                        <i class="fas fa-folder"></i> View
+                                        <i class="fas fa-folder"></i> Xem 
                                     </a>
                                     <a class="btn btn-info btn-sm" href="{{ Route('orders.update',$p->order_id) }}">
-                                        <i class="fas fa-pencil-alt"></i> Edit
+                                        <i class="fas fa-pencil-alt"></i> Sửa
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="{{ Route('orders.delete',$p->order_id) }}">
-                                        <i class="fas fa-trash"></i> Delete
+                                    <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ Route('orders.delete',$p->order_id) }}">
+                                        <i class="fas fa-trash"></i> Xóa
                                     </a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                            <th>Order ID</th>
-                            <th>Order Date</th>
-                            <th>Order Status</th>
-                            <th>Order Note</th>
-                            <th></th>
-                            </tr>
-                        </tfoot>
+                      
                     </table>
                 </div>
                 <!-- /.card-body -->

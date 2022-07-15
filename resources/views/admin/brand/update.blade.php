@@ -9,7 +9,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Cập nhật thương hiệu - {{ $p->product_name }}</h3>
+                        <h3 class="card-title">Cập nhật thương hiệu - {{ $p->brand_name }}</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -32,6 +32,16 @@
                             <div class="form-group">
                                 <label for="txt-name">Tên sản phẩm</label>
                                 <input type="text" class="form-control" id="txt-name" name="brand_name" placeholder="Input Product Name" value="{{ $p->brand_name }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Ảnh</label>
+                                <img class="img-fluid" src="{{ url('images/'.$p->brand_logo) }}" />
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="image" name="brand_logo">
+                                        <label class="custom-file-label" for="image">Chọn ảnh</label>
+                                    </div>
+                                </div>
                             </div>
                             
                         </div>

@@ -1,8 +1,6 @@
 <!-- lưu tại /resources/views/product/create.blade.php -->
 @extends('admin.layout-admin')
 @section('title')
-Thêm slider
-@endsection
 
 @section('content')
 
@@ -13,7 +11,7 @@ Thêm slider
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Thêm slider</h3>
+                        <h3 class="card-title">Create Slider</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -49,17 +47,21 @@ Thêm slider
 
                             <div class="form-group">
                                 <label for="txt-product">Sản phẩm</label>
-                                <input type="text" class="form- control" id="txt-product" name="product_id" placeholder="Nhập ID sản phẩm...">
+                                <select  class="form-control" id="txt-product" name="product_id">
+                                @foreach($product as $p)
+                                    <option value="{{ $p->id }}">{{ $p->product_name }}</option>
+                                </select>
+                                @endforeach
                             </div>
 
                             <div class="form-group">
                                 <label for="txt-numerical-order">Thứ tự</label>
-                                <input type="text" class="form- control" id="txt-numerical-order" name="numerical_order" placeholder="Nhập ID sản phẩm...">
+                                <input type="text" class="form-control" id="txt-numerical-order" name="numerical_order" placeholder="Nhập số thứ tự...">
                             </div>
-                        </div>
+</div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Xác nhận</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div>

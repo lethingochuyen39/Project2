@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products');
             $table->integer('customer_id')->unsigned();
-            $table->foreign('customer_id')->references('customer_id')->on('customers');
+            $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
         });
 
         DB::table('comments')->insert(

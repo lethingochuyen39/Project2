@@ -32,6 +32,8 @@ class AdminLoginRequest extends FormRequest
     public function messages()
     {
         return [
+
+            
             'email.required'=>'Bạn chưa nhập e-mail!',
             'email'=>'Email không đúng định dạng!',
 

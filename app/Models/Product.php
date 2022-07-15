@@ -46,7 +46,7 @@ class Product extends Model
      public function Product_type(){
         return $this->belongsTo(related: Product_type::class, foreignKey: 'product_type_id', ownerKey: 'id');
      }
-     public function brands(){
+     public function brand(){
         return $this->belongsTo(related: Brand::class, foreignKey: 'brand_id', ownerKey: 'id');
      }
 }

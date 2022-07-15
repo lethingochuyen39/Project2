@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\InsuranceController;
+use App\Http\Controllers\SizeController;
 
 // long
 use App\Http\Controllers\UserController;
@@ -84,13 +85,7 @@ Route::get('admin/product/{id}/update}',[ProductController::class,'update'])->na
 Route::post('admin/product/{id}/postUpdate',[ProductController::class,'postUpdate'])->name('product.postUpdate')->middleware('checklogin13::class');
 Route::get('admin/product/{id}/delete',[ProductController::class,'delete'])->name('product.delete')->middleware('checklogin13::class');
 Route::get('admin/product/{id}/details',[ProductController::class,'details'])->name('product.details')->middleware('checklogin13::class');
-//brand
-Route::get('admin/brand/index',[BrandController::class,'index'])->name('brand.index')->middleware('checklogin13::class');
-Route::get('admin/brand/create',[BrandController::class,'create'])->name('brand.create')->middleware('checklogin13::class');
-Route::post('admin/brand/postCreate',[BrandController::class,'postCreate'])->name('brand.postCreate')->middleware('checklogin13::class');
-Route::get('admin/brand/{id}/update}',[BrandController::class,'update'])->name('brand.update')->middleware('checklogin13::class');
-Route::post('admin/brand/{id}/postUpdate',[BrandController::class,'postUpdate'])->name('brand.postUpdate')->middleware('checklogin13::class');
-Route::get('admin/brand/{id}/delete',[BrandController::class,'delete'])->name('brand.delete')->middleware('checklogin13::class');
+
 //productType
 Route::get('admin/product_type/index',[ProductTypeController::class,'index'])->name('productType.index')->middleware('checklogin13::class');
 Route::get('admin/product_type/create',[ProductTypeController::class,'create'])->name('productType.create')->middleware('checklogin13::class');
@@ -115,6 +110,15 @@ Route::get('admin/promotion/{id}/delete',[PromotionController::class,'delete'])-
 Route::get('admin/promotion/{id}/details',[PromotionController::class,'details'])->name('promotion.details')->middleware('checklogin13::class');
 
 //Tuan
+//brand
+Route::get('admin/brand/index',[BrandController::class,'index'])->name('brand.index')->middleware('checklogin13::class');
+Route::get('admin/brand/create',[BrandController::class,'create'])->name('brand.create')->middleware('checklogin13::class');
+Route::post('admin/brand/postCreate',[BrandController::class,'postCreate'])->name('brand.postCreate')->middleware('checklogin13::class');
+Route::get('admin/brand/{id}/update}',[BrandController::class,'update'])->name('brand.update')->middleware('checklogin13::class');
+Route::post('admin/brand/{id}/postUpdate',[BrandController::class,'postUpdate'])->name('brand.postUpdate')->middleware('checklogin13::class');
+Route::get('admin/brand/{id}/delete',[BrandController::class,'delete'])->name('brand.delete')->middleware('checklogin13::class');
+
+
 //order
 Route::get('admin/orders/index', [OrdersController::class, 'index'])->name('orders.index')->middleware('checklogin23::class');
 Route::get('admin/orders/{orders_id}/update', [OrdersController::class, 'update'])->name('orders.update')->middleware('checklogin23::class');
@@ -154,12 +158,14 @@ Route::post('user/post-Contact',[CustomerController::class,'postContact'])->name
 // huong dan
 //insurance-Quan
 Route::get('user/pages/insurance', [InsuranceController::class, 'insurance'])->name('user.insurance');
-
+Route::get('user/pages/size', [SizeController::class, 'size'])->name('user.size');
+Route::get('user/pages/news', [NewsController::class, 'news'])->name('user.news');
+Route::get('user/pages/{news_slug}/news', [NewsController::class, 'news_details'])->name('user.news_details');
 
 // san pham-Long
 Route::get('user/pages/product',[UserController::class,'product'])->name('user.product');
 Route::get('user/pages/{product_id}/detailProduct',[UserController::class,'detailProduct'])->name('user.detailProduct');
-Route::post('user/pages/siderBar',[UserController::class,'siderBar'])->name('user.siderBar');
+Route::get('user/pages/brand/{name}',[UserController::class,'show_brand'])->name('user.showbrand');
 
 /*(-------USER END--------)*/
 

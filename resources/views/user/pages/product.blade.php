@@ -1,31 +1,31 @@
-@extends('user.layout-user')
+@extends('user.layout-product')
 @section('title', 'home')
 @section('content')
-        <section class="content" style="width:200px;padding-top:100px;display:inline-block;">
-                    <div class="card-body">
-                        <div class="card card-info card-outline">
-
-                            <div class="card-body">
-                                <p>Thương hiệu: </p>
-                                @foreach($brands as $b)
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="customCheckbox1"  value="{{ $b->brand_name }}">
-                                    <label for="customCheckbox1" class="custom-control-label">{{ $b->brand_name }}</label>
-                                </div>
-                                @endforeach
-
+<style>
+    h6{
+        width: 320px;
+        text-align: center;
+    }
+</style>
+<div class="container" id="products">
+        @foreach($products as $p)
+        <!-- <div class="col-sm-6 col-md-8 hvr-grow" style="border-style: solid; border-width:1px;text-align: center; " data-id="abc">  
+        </div> -->
+        <div>
+            <div class="card">
+                <a href="{{ Route('user.detailProduct',$p->id) }}">
+                    <center>
+                        <div class="imgBx">
+                            <img src="{{ url('images/'.$p->product_image) }}" alt="">
                         </div>
-                    </div>
+                    </center>
+                </a>
+                <div class="contentBx">
+                    <a id="Buy" href="#">Buy Now</a>
                 </div>
-        </section>
-@foreach($products as $p)
-<div class="container" style="padding-top: 100px;">
-    <div class="row" id="products">
-        <div class="col-sm-6 col-md-4 hvr-grow" style="border-style: solid; border-width:1px;text-align: center; " data-id="abc">
-            <img src="{{ url('images/'.$p->product_image) }}" alt="">
-            <p>{{ $p->product_name }}</p>
+            </div>
+            <h6><b>{{ $p->product_name }}</b></h6>
         </div>
+        @endforeach
     </div>
-</div>
-@endforeach
 @endsection

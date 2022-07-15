@@ -27,7 +27,7 @@ class Slider extends Model
           'updated_at'
       ];
 
-      public function products(){
+      public function product(){
         return $this->belongsTo(related: Product::class, foreignKey: 'product_id', ownerKey: 'id');
      }
 }

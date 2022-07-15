@@ -24,32 +24,24 @@
                     <form role="form" action="{{ Route('admin.users.postCreate') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="card-body">
-                            <small>@if($errors->has('name'))
-                                <strong class="text-danger">{{ $errors->first('name') }}</strong>
-                                @endif</small>
+                           
                             <div class="form-group">
                                 <label for="txt-name">Họ tên</label>
                                 <input type="text" class="form-control" id="txt-name" name="name">
                             </div>
 
                             <div class="form-group">
-                                <small>@if($errors->has('email'))
-                                    <strong class="text-danger">{{ $errors->first('email') }}</strong>
-                                    @endif</small>
+                             
                                 <label for="txt-name">Email</label>
                                 <input type="email" class="form-control" id="txt-email" name="email">
                             </div>
                             <div class="form-group">
-                                <small>@if($errors->has('password'))
-                                    <strong class="text-danger">{{ $errors->first('password') }}</strong>
-                                    @endif</small>
+                              
                                 <label for="txt-password">Mật khẩu</label>
                                 <input type="text" class="form-control" id="txt-password" name="password">
                             </div>
                             <div class="form-group">
-                                <small>@if($errors->has('password'))
-                                    <strong class="text-danger">{{ $errors->first('role') }}</strong>
-                                    @endif</small>
+                               
                                 <label for="txt-name">Chức vụ</label></br>
                                 <input type="radio" id="QLSP" name="role" value="1">
                                 <label for="QLSP">Quản lý sản phẩm</label><br>

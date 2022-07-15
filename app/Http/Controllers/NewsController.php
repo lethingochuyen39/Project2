@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
 use App\Models\News;
+
 class NewsController extends Controller
 {
     public function index()
@@ -44,7 +46,7 @@ class NewsController extends Controller
     {
         $news = $request->all();
 
-        
+
         if ($request->hasFile('news_image')) {
             $file = $request->file('news_image');
             $extension = $file->getClientOriginalExtension();
@@ -75,10 +77,22 @@ class NewsController extends Controller
         $p->delete();
         return redirect()->route('admin.news.index');
     }
-    
+
     public function details($news_id)
     {
         $p = News::find($news_id);
         return view('admin.news.details', ['p' => $p]);
+    }
+
+    public function news()
+    {
+        $news = News::all();
+        return view('user.pages.news', ['news' => $news]);
+    }
+
+    public function news_details($news_slug)
+    {
+        $news = News::find($news_slug);
+        return view('user.pages.news_details', ['news' => $news]);
     }
 }

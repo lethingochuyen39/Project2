@@ -1,17 +1,17 @@
 @extends('admin.layout-admin')
-@section('title', 'orderdetails index')
+@section('title', 'Danh sách chi tiết đơn hàng')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>DataTables</h1>
+                <h1>Danh sách chi tiết đơn hàng</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb- item"><a href="#">Home</a></li>
-                    <li class="breadcrumb- item active">DataTables</li>
+                    <li class="breadcrumb- item">Trang chủ</li>
+                    <li class="breadcrumb- item active">chi tiết đơn hàng</li>
                 </ol>
             </div>
         </div>
@@ -31,14 +31,14 @@
                     <table id="brands" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>OrderDetails ID</th>
-                                <th>OrderDetails Quanity</th>
-                                <th>OrderDetails Price </th>
-                                <th>Product Size</th>
-                                <th>Order ID</th>
-                                <th>Product ID</th>
+                                <th>ID</th>
+                                <th>Số lượng</th>
+                                <th>Giá</th>
+                                <th>Kích cỡ</th>
+                                <th>Mã đơn hàng</th>
+                                <th>Mã sản phẩm</th>
 
-                                <th></th>
+                                <th>Tùy chọn</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,27 +52,16 @@
                                 <td>{{ $p->product_id   }}</td>
                                 <td class="text-right">
                                     <a class="btn btn-info btn-sm" href="{{ Route('orderdetails.update',$p->orderDetail_id) }}">
-                                        <i class="fas fa-pencil-alt"></i> Edit
+                                        <i class="fas fa-pencil-alt"></i> Sửa
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="{{ Route('orderdetails.delete',$p->orderDetail_id) }}">
-                                        <i class="fas fa-trash"></i> Delete
+                                    <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ Route('orderdetails.delete',$p->orderDetail_id) }}">
+                                        <i class="fas fa-trash"></i> Xóa
                                     </a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>OrderDetails ID</th>
-                                <th>Order ID</th>
-                                <th>Product ID</th>
-                                <th>OrderDetails Quanity</th>
-                                <th>OrderDetails Price </th>
-                                <th>Product Size</th>
-
-                                <th></th>
-                            </tr>
-                        </tfoot>
+                       
                     </table>
                 </div>
                 <!-- /.card-body -->

@@ -69,7 +69,7 @@
                                         <i class="fas fa-folder"></i>Sửa
                                     </a>
 
-                                    @if($p->role ==0 )
+                                    @if($p->role ==3 )
                                     <a class="btn btn-danger btn-sm disabled" onclick="return confirm('Bạn có chắc muốn xóa?');" href="{{ Route('admin.users.delete',$p->id) }}">
                                         <i class="fas fa-trash"></i>Xóa
                                     </a>
